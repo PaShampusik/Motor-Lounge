@@ -1,12 +1,11 @@
 ﻿using Motor_Lounge.Services.Settings;
-using Motor_Lounge.Services;
 
-namespace Motor_Lounge.Services;
+namespace Motor_Lounge.Services.Navigation;
 
-public class MauiNavigationService : INavigationService
+public class NavigationService : INavigationService
 {
     private readonly ISettingsService _settingsService;
-    public MauiNavigationService(ISettingsService settingsService)
+    public NavigationService(ISettingsService settingsService)
     {
         _settingsService = settingsService;
     }

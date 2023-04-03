@@ -1,4 +1,4 @@
-﻿namespace Motor_Lounge.Services;
+﻿namespace Motor_Lounge.Services.Navigation;
 
 public interface INavigationService
 {

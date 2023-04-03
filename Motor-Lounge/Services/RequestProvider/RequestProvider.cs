@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Motor_Lounge.Services.RequestProvider
 {
-    public class RequestProvider
+    public class RequestProvider : IRequestProvider
     {
         public RequestProvider() 
         {

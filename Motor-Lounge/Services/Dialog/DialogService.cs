@@ -1,6 +1,4 @@
-﻿using Motor_Lounge.Services.Dialog;
-
-namespace Motor_Lounge.Services;
+﻿namespace Motor_Lounge.Services;
 
 public class DialogService : IDialogService
 {

@@ -1,6 +1,6 @@
 ﻿using Motor_Lounge.Services.Settings;
 
-namespace eShopOnContainers.Services.Settings;
+namespace Motor_Lounge.Services.Settings;
 
 public class SettingsService : ISettingsService
 {
