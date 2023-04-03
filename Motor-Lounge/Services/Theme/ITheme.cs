@@ -1,0 +1,6 @@
+﻿namespace Motor_Lounge.Services.Theme;
+
+public interface ITheme
+{
+    void SetStatusBarColor(Color color, bool darkStatusBarTint);
+}
