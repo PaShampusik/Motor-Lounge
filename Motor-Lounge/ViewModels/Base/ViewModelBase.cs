@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Motor_Lounge.Services;
+using Motor_Lounge.Services.Navigation;
 
 namespace Motor_Lounge.ViewModels.Base;
 
@@ -19,7 +19,7 @@ public abstract partial class ViewModelBase : ObservableObject, IViewModelBase
 
     public ViewModelBase(INavigationService navigationService)
     {
-        /*NavigationService = navigationService;
+        NavigationService = navigationService;
 
         InitializeAsyncCommand =
             new AsyncRelayCommand(
@@ -28,7 +28,7 @@ public abstract partial class ViewModelBase : ObservableObject, IViewModelBase
                     await IsBusyFor(InitializeAsync);
                     IsInitialized = true;
                 },
-                AsyncRelayCommandOptions.FlowExceptionsToTaskScheduler);*/
+                AsyncRelayCommandOptions.FlowExceptionsToTaskScheduler);
     }
 
     public virtual void ApplyQueryAttributes(IDictionary<string, object> query)
