@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Motor_Lounge.Models.Users
 {
-    internal class Credentials
+    public class Credentials
     {
         public string HashedPassword { get; set; }
         public string Username { get; set; }

@@ -4,7 +4,7 @@ namespace Motor_Lounge.Views;
 
 public partial class MileageFilterPage : ContentPage
 {
-	public MileageFilterPage(CatalogViewModel model)
+	public MileageFilterPage(MileageFilterViewModel model)
 	{
 		InitializeComponent();
 		BindingContext=model;

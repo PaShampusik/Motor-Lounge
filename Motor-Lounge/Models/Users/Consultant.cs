@@ -3,7 +3,7 @@ using Motor_Lounge.Models.Helpers;
 
 namespace Motor_Lounge.Models.Users
 {
-    internal class Consultant : User
+    public class Consultant : User
     {
         public Helpers.Information Information { get; set; }
         public string Type { get; set; }

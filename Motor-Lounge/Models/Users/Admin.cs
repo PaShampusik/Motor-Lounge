@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Motor_Lounge.Models.Users
 {
-    internal class Admin : Salesman
+    public class Admin : Salesman
     {
 
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Motor_Lounge.Models.Users
 {
-    internal class Salesman : Consultant
+    public class Salesman : Consultant
     {
         public int SoldCount { get; set; }
     }
