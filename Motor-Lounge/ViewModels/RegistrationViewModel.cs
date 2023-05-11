@@ -86,7 +86,7 @@ namespace Motor_Lounge.ViewModels
             }
         }
 
-        /*public async Task Register()
+        public async Task Register()
         {
             if (IsBusy)
             {
@@ -132,6 +132,6 @@ namespace Motor_Lounge.ViewModels
             {
                 IsBusy = false;
             }
-        }*/
+        }
     }
 }

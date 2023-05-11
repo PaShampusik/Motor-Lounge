@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Motor_Lounge.Models.Helpers
 {
-    internal class Photo
+    public class Photo
     {
         public List<string> Photos { get; set; }
     }

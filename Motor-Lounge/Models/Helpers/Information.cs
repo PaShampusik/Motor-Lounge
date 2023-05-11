@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Motor_Lounge.Models.Helpers
 {
-    internal class Information
+    public class Information
     {
         public string Info { get; set; }
     }

@@ -2,11 +2,139 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Motor_Lounge.Views.LoginPage"
-             Title="LoginPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <StackLayout>
+            <Frame BackgroundColor="SkyBlue"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   CornerRadius="30"
+                   Padding="0"
+                   Margin="0">
+                <Image Source="Logo.png"
+                       Aspect="AspectFill"
+                       Margin="0"></Image>
+            </Frame>
+        </StackLayout>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label  Grid.Row="1"
+                    Text="Welcome"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="Title"
+                    Margin="0"
+                    Padding="0" />
+            <Label  Grid.Row="1"
+                    Text="Sign in to continue"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="Subtitle"
+                    Margin="0"
+                    Padding="0" />
+
+            <StackLayout Grid.Row="3"
+                         Orientation="Vertical"
+                         HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent"
+                       BorderColor="Black"
+                       Padding="0"
+                       Margin="0,15,0,0"
+                       HorizontalOptions="FillAndExpand"
+                       CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               CornerRadius="30"
+                               Padding="30"
+                               Margin="5">
+                            <Image Source="Logo.png"
+                                   Aspect="AspectFill"
+                                   Margin="0">
+
+                            </Image>
+                        </Frame>
+                        <Entry Text="{Binding Email}"
+                               Placeholder="Email"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="FillAndExpand">
+                        </Entry >
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="Transparent"
+                       BorderColor="Black"
+                       Padding="0"
+                       HorizontalOptions="FillAndExpand"
+                       CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               CornerRadius="30"
+                               Padding="30"
+                               Margin="5">
+                            <Image Source="Logo.png"
+                                   Aspect="AspectFill"
+                                   Margin="0">
+
+                            </Image>
+                        </Frame>
+                        <Entry Text="{Binding Password}"
+                               Placeholder="Password"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="FillAndExpand">
+                        </Entry >
+
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="0, 10, 0,0"
+                                     Padding="0">
+                            <CheckBox IsChecked="False" />
+                            <Label Text="Remeber me"
+                                   TextColor="DarkGray"
+                                   FontSize="Small"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        
+                        <Button Text="Sign in"
+                                BackgroundColor="#58D68D"
+                                TextColor=" White"
+                                FontAttributes="Bold"
+                                CornerRadius="30"
+                                WidthRequest="200"
+                                Margin="0,15,0,0"
+                                Command="{Binding LoginCommand}"></Button>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 60, 0, 0" Padding="0">
+                            <Label Text ="New user?" TextColor="DarkGray" Fontsize ="Small"></Label>
+                            <Label Text="Sign Up" TextColor="#1D8348" FontAttributes="Bold" FontSize="Small"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </Grid>
+    </Grid>
 </ContentPage>

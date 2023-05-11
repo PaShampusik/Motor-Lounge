@@ -7,6 +7,7 @@ namespace Motor_Lounge.ViewModels
     {
         public MainViewModel(INavigationService navigationService) : base(navigationService)
         {
+
         }
     }
 }
