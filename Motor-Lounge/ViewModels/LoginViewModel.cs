@@ -1,7 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Motor_Lounge.Services.MongoDB;
-using Motor_Lounge.Services.Navigation;
 using Motor_Lounge.ViewModels.Base;
 using System.Diagnostics;
 using System.Windows.Input;
@@ -11,13 +9,13 @@ namespace Motor_Lounge.ViewModels
     public partial class LoginViewModel : BaseViewModel
     {
         [ObservableProperty]
-        public string _name;
+        public string name;
 
         [ObservableProperty]
-        public string _email;
+        public string email;
 
         [ObservableProperty]
-        public string _password;
+        public string password;
 
         [RelayCommand]
         public async void Login()
@@ -26,4 +24,3 @@ namespace Motor_Lounge.ViewModels
         }
     }
 }
-j

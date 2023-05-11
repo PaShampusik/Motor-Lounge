@@ -1,11 +1,10 @@
-﻿using Motor_Lounge.Services.Navigation;
-using Motor_Lounge.ViewModels.Base;
+﻿using Motor_Lounge.ViewModels.Base;
 
 namespace Motor_Lounge.ViewModels
 {
-    internal class SettingsViewModel : ViewModelBase
+    internal class SettingsViewModel : BaseViewModel
     {
-        public SettingsViewModel(INavigationService navigationService) : base(navigationService)
+        public SettingsViewModel()
         {
         }
     }

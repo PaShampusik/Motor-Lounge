@@ -128,7 +128,7 @@
                                 Command="{Binding LoginCommand}"></Button>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 60, 0, 0" Padding="0">
-                            <Label Text ="New user?" TextColor="DarkGray" Fontsize ="Small"></Label>
+                            <Label Text ="New user?" TextColor="DarkGray" FontSize="Small"></Label>
                             <Label Text="Sign Up" TextColor="#1D8348" FontAttributes="Bold" FontSize="Small"></Label>
                         </StackLayout>
                     </StackLayout>

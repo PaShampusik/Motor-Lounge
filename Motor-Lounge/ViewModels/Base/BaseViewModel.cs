@@ -10,7 +10,7 @@ namespace Motor_Lounge.ViewModels.Base
     public partial class BaseViewModel : ObservableObject
     {
         [ObservableProperty]
-        public bool _isBusy;
+        public bool isBusy;
         [ObservableProperty]
         public string title;
     }
