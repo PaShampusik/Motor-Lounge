@@ -32,7 +32,7 @@ namespace Motor_Lounge.ViewModels
         [RelayCommand]
         public async Task Register()
         {
-            if (Name != null && Email != null && Password != null && Repeatpassword != null) 
+            if (Name != null && Email != null && Password != null && Repeatpassword != null)
             {
                 if (Password != Repeatpassword)
                 {
@@ -40,9 +40,17 @@ namespace Motor_Lounge.ViewModels
                 }
                 else
                 {
-                    var salt = RandomNumberGenerator.GetBytes(32);
-                    await _userService.AddAsync(new User(Name, Email, GenerateSaltedHash(Encoding.UTF8.GetBytes(Password), salt), salt));
-                    await Shell.Current.GoToAsync("..");
+
+                    if (!_userService.GetByEmailAsync(Email).IsFaulted)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Unable to register!", "Account with such Email already exists!", "Ok");
+                    }
+                    else
+                    {
+                        var salt = RandomNumberGenerator.GetBytes(32);
+                        await _userService.AddAsync(new User(Name, Email, GenerateSaltedHash(Encoding.UTF8.GetBytes(Password), salt), salt));
+                        await Shell.Current.GoToAsync("..");
+                    }
                 }
             }
             else
@@ -54,7 +62,7 @@ namespace Motor_Lounge.ViewModels
         static byte[] GenerateSaltedHash(byte[] plainText, byte[] salt)
         {
             var sha512 = SHA512.Create();
-            
+
             byte[] plainTextWithSaltBytes =
               new byte[plainText.Length + salt.Length];
 

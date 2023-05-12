@@ -34,6 +34,11 @@ namespace Motor_Lounge.Services
             return unitOfWork.userRepository.GetByIdAsync(id);
         }
 
+        public Task<User> GetByEmailAsync(string email)
+        {
+            return (unitOfWork.userRepository as UserRepository).GetByEmailAsync(email);
+        }
+
         public Task UpdateAsync(User item)
         {
             return unitOfWork.userRepository.UpdateAsync(item);

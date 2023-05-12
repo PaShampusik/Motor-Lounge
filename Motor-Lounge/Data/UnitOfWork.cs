@@ -14,8 +14,8 @@ namespace Motor_Lounge.Data
         public UnitOfWork(AppDbContext _context)
         {
             context = _context;
-            carRepository = new Repository<Car>(context);
-            userRepository = new Repository<User>(context);
+            carRepository = new CarRepository(context);
+            userRepository = new UserRepository(context);
         }
 
         IRepository<User> IUnitOfWork.userRepository => userRepository;
