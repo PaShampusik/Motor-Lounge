@@ -18,5 +18,7 @@ namespace Motor_Lounge.Models.Cars
             Brand = brand;
             Model = model;
         }
+
+        public Specification() { }
     }
 }

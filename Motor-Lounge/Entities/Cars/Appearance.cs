@@ -20,5 +20,12 @@ namespace Motor_Lounge.Models.Cars
             CarColor = carColor;
             InteriorMaterial = InteriorMaterail;
         }
+
+        public Appearance() { }
+
+        public override string ToString()
+        {
+            return Color + " " + InteriorColor + " " + CarColor + " " + InteriorMaterial;
+        }
     }
 }

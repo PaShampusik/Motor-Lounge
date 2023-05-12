@@ -20,5 +20,7 @@
             BodyType = bodyType;
             NumOfDoors = numOfDoors;
         }
+
+        public Characteristics() { }
     }
 }

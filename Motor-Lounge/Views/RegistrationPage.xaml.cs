@@ -1,9 +1,14 @@
+using Motor_Lounge.ViewModels;
+
 namespace Motor_Lounge.Views;
 
 public partial class RegistrationPage : ContentPage
 {
-	public RegistrationPage()
+    private RegistrationViewModel _registrationViewModel;
+	public RegistrationPage(RegistrationViewModel registrationViewModel)
 	{
-		InitializeComponent();
-	}
+        InitializeComponent();
+        _registrationViewModel = registrationViewModel;
+        BindingContext = _registrationViewModel;
+    }
 }

@@ -14,12 +14,14 @@ namespace Motor_Lounge.Services
 
         public Task AddAsync(User item)
         {
-            return unitOfWork.userRepository.AddAsync(item);
+            unitOfWork.userRepository.AddAsync(item);
+            return unitOfWork.SaveAllAsync();
         }
 
         public void DeleteAsync(User item)
         {
             unitOfWork.userRepository.DeleteAsync(item);
+            unitOfWork.SaveAllAsync();
         }
 
         public Task<IReadOnlyList<User>> GetAllAsync()

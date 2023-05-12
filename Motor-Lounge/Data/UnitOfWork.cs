@@ -3,7 +3,7 @@ using Motor_Lounge.Models.Users;
 
 namespace Motor_Lounge.Data
 {
-    public class EfUnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext context;
 
@@ -11,7 +11,7 @@ namespace Motor_Lounge.Data
 
         private readonly IRepository<User> userRepository;
 
-        public EfUnitOfWork(AppDbContext _context)
+        public UnitOfWork(AppDbContext _context)
         {
             context = _context;
             carRepository = new Repository<Car>(context);

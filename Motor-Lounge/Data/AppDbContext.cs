@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Motor_Lounge.Entities.Converters;
 using Motor_Lounge.Models.Cars;
+using Motor_Lounge.Models.Helpers;
 using Motor_Lounge.Models.Users;
 
 namespace Motor_Lounge.Data
@@ -18,7 +20,7 @@ namespace Motor_Lounge.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Car>().Property(x => x.Id).ValueGeneratedOnAdd();
+            /*modelBuilder.Entity<Car>().Property(x => x.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<Car>().Property(x => x.Photos).IsRequired();
             modelBuilder.Entity<Car>().Property(x => x.Price).IsRequired();
             modelBuilder.Entity<Car>().Property(x => x.Appearance).IsRequired();
@@ -29,7 +31,34 @@ namespace Motor_Lounge.Data
             modelBuilder.Entity<User>().Property(x => x.UserName).IsRequired();
             modelBuilder.Entity<User>().Property(x => x.Email).IsRequired();
             modelBuilder.Entity<User>().Property(x => x.HashedPassword).IsRequired();
-            modelBuilder.Entity<User>().Property(x => x.Salt).IsRequired();
+            modelBuilder.Entity<User>().Property(x => x.Salt).IsRequired();*/
+
+            modelBuilder.Entity<Car>()
+        .Property(c => c.Price)
+        .HasConversion(new PriceConverter());
+
+            modelBuilder.Entity<Car>()
+                .Property(c => c.Information)
+                .HasConversion(new InformationConverter());
+
+            modelBuilder.Entity<Car>()
+                .Property(c => c.Photos)
+                .HasConversion(new PhotosConverter());
+
+            modelBuilder.Entity<Car>()
+                .Property(c => c.Appearance)
+                .HasConversion(new AppearanceConverter());
+
+            modelBuilder.Entity<Car>()
+                .Property(c => c.Characteristics)
+                .HasConversion(new CharacteristicsConverter());
+
+            modelBuilder.Entity<Car>()
+                .Property(c => c.Equipment)
+                .HasConversion(new EquipmentConverter());
+            modelBuilder.Entity<Car>()
+                .Property(c => c.Specification)
+                .HasConversion(new SpecificationConverter());
         }
     }
 }

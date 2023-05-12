@@ -13,15 +13,17 @@ namespace Motor_Lounge.Models.Users
         public string Email { get; set; }
 
         //credentials
-        public string HashedPassword { get; set; }
-        public string Salt { get; set; }
+        public byte[] HashedPassword { get; set; }
+        public byte[] Salt { get; set; }
 
-        public User(string userName, string email, string hashedPassword, string salt)
+        public User(string userName, string email, byte[] hashedPassword, byte[] salt)
         {
             UserName = userName;
             Email = email;
             HashedPassword = hashedPassword;
             Salt = salt;
         }
+
+        public User() { }
     }
 }
