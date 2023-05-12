@@ -57,6 +57,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\car.svg" />
+	  <None Remove="Resources\Images\home.svg" />
 	  <None Remove="Resources\Images\Logo.png" />
 	  <None Remove="Views\appsettings.json" />
 	</ItemGroup>
@@ -80,6 +82,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\CarDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CarPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\FilterPage.xaml">

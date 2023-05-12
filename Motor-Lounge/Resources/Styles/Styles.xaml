@@ -402,4 +402,11 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style TargetType="Tab">
+        <Setter Property="Shell.TabBarBackgroundColor"
+                Value="White" />
+        <Setter Property="Shell.TabBarTitleColor"
+                Value="Black" />
+    </Style>
+
 </ResourceDictionary>

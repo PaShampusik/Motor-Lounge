@@ -51,12 +51,13 @@ public static class MauiProgram
         builder.Services.AddTransient<LoginPage>();
         builder.Services.AddTransient<RegistrationPage>();
         builder.Services.AddTransient<MainPage>();
-        builder.Services.AddTransient<FilterPage>();
+        builder.Services.AddTransient<CarPage>();
         builder.Services.AddTransient<CarDetailsPage>();
+        builder.Services.AddTransient<FilterPage>();
         builder.Services.AddTransient<SettingsPage>();
 
         AddDbContext(builder);
-        SeedData(builder);
+        //SeedData(builder);
 
         return builder.Build();
     }
@@ -81,26 +82,19 @@ public static class MauiProgram
     public async static void SeedData(MauiAppBuilder builder)
     {
         using var provider = builder.Services.BuildServiceProvider();
-        try
-        {
-            var unitOfWork = provider.GetService<IUnitOfWork>();
-            await unitOfWork.RemoveDatbaseAsync();
-            await unitOfWork.CreateDatabaseAsync();
-            IList<Car> cars = new List<Car>() {
+
+        var unitOfWork = provider.GetService<IUnitOfWork>();
+        await unitOfWork.RemoveDatbaseAsync();
+        await unitOfWork.CreateDatabaseAsync();
+        IList<Car> cars = new List<Car>() {
                 new Car(new Specification(), new Equipment(), new Photo(), new Price(), new Appearance(), new Characteristics(), new Information()) ,
                 new Car(new Specification(), new Equipment(), new Photo(), new Price(), new Appearance(), new Characteristics(), new Information())
             };
 
-            foreach (var car in cars)
-            {
-                await unitOfWork.carRepository.AddAsync(car);
-            }
-            await unitOfWork.SaveAllAsync();
-        }
-        catch (Exception ex)
+        foreach (var car in cars)
         {
+            await unitOfWork.carRepository.AddAsync(car);
         }
-
-        // Add sets
+        await unitOfWork.SaveAllAsync();
     }
 }

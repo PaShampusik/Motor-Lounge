@@ -2,7 +2,7 @@
 
 namespace Motor_Lounge.ViewModels
 {
-    internal class SettingsViewModel : BaseViewModel
+    public class SettingsViewModel : BaseViewModel
     {
         public SettingsViewModel()
         {

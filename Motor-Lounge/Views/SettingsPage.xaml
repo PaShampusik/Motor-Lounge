@@ -2,11 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Motor_Lounge.Views.SettingsPage"
-             Title="SettingsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="SettingsPage"
+             BackgroundColor="White"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+
+    <StackLayout
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        <!-- Переключатель темы -->
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand"
+                     Margin="10">
+            <Label Text="Темная тема"
+                   TextColor="Black"
+                   FontSize="Default"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center" />
+            <Switch x:Name="ThemeToggle"
+                    BackgroundColor="{StaticResource Gray100}"
+                    
+                    HorizontalOptions="End"
+                    ThumbColor="Black"
+                    Margin="50, 0 ,0, 0"
+                    OnColor="Black"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    IsToggled="false"
+                    VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <!-- Чекбокс для сохранения входных данных -->
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand"
+                     Margin="10">
+            <Label Text="Сохранить входные данные"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Default"
+                   VerticalOptions="Center" />
+            <CheckBox x:Name="SaveDataCheckBox"
+                      HorizontalOptions="End"
+                      IsChecked="false"
+                      BackgroundColor="White"
+                      Color="Black"
+                      VerticalOptions="CenterAndExpand"
+                      Margin="10" />
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
