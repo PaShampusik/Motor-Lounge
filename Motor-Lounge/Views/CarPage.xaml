@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Motor_Lounge.Views.CarPage"
+             x:DataType="models:CarViewModel"
+             xmlns:local="clr-namespace:Motor_Lounge.Entities.Cars"
+             xmlns:models="clr-namespace:Motor_Lounge.ViewModels"
+             xmlns:helpers="clr-namespace:Motor_Lounge.Entities.Helpers"
+             xmlns:entities="clr-namespace:local;assembly=Motor_Lounge.Entities.Cars"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Shell.FlyoutBehavior="Disabled"
+             BackgroundColor="{StaticResource Gray100}"
+             Shell.NavBarIsVisible="False"
+             Title="CarPage">
+
+    
+    <Grid HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+            <StackLayout BindableLayout.ItemsSource="{Binding Cars}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="local:Car">
+                        <Frame BackgroundColor="White"                               
+                               BorderColor ="White"
+                               Margin="5,5,5,5"
+                               >
+                            <Frame.GestureRecognizers>
+
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:CarViewModel}}, Path=GoToCarDetailsPageCommand}"
+                                                      CommandParameter="{Binding}" />
+
+                            </Frame.GestureRecognizers>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="FillAndExpand"
+                                         HeightRequest="200"
+                                         Orientation="Vertical"
+                                         >
+                                <Grid
+                                    ColumnDefinitions="*, *, 0.5*, 2*"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Start"
+                                    ColumnSpacing="3">
+                                    <Label Text="{Binding Specification.Brand}"
+                                           TextColor="Black"
+                                           Grid.Column="0"
+                                           FontAttributes="Bold"
+                                           FontSize="Small"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Start"/>
+                                    <Label Text="{Binding Specification.Model}"
+                                           TextColor="Black"
+                                           FontSize="Micro"
+                                           Grid.Column="1"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center" />
+                                    <Label Text="{Binding Specification.Year}"
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           FontSize="Micro"
+                                           Grid.Column="2"
+                                           VerticalOptions="Center"/>
+                                    <Label Text = "{Binding Price.IndividualPrice, StringFormat='{0:D} BYN'}"
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           Grid.Column="3"
+                                           FontSize="Small"
+                                           HorizontalOptions="End"
+                                           VerticalOptions="Center" />
+                                </Grid>
+
+                                <StackLayout Orientation="Horizontal"
+                                             VerticalOptions="Center"
+                                             Margin="0,5,0,5"
+                                             HorizontalOptions="CenterAndExpand">
+                                    <Frame
+                                        HeightRequest="140"
+                                        WidthRequest="200">
+                                        <Image>
+                                            
+                                        </Image>
+                                    </Frame>
+                                </StackLayout>
+
+                                <Grid
+                                    ColumnDefinitions="*, *, *"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="End">
+                                    
+                                    <Label Text="{Binding Characteristics.EngineVolume}"
+                                           Grid.Column="0"
+                                           TextColor="Black"
+                                           FontSize="Micro"
+                                           VerticalOptions="End" 
+                                           HorizontalOptions="Start"/>
+                                    <Label Text="{Binding Characteristics.EngineType}"
+                                           Grid.Column="1"
+                                           TextColor="Black"
+                                           FontSize="Micro"
+                                           VerticalOptions="End"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Characteristics.GearboxType}"
+                                           TextColor="Black"
+                                           Grid.Column="2"
+                                           FontSize="Micro"
+                                           HorizontalOptions="End"
+                                           VerticalOptions="End"/>
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+        <ImageButton Grid.Row="0"
+                CornerRadius="35"
+                HeightRequest="70"
+                Margin="0, 0, 15, 15"
+                     Source="filter_icon.png"
+                     Aspect="Center"
+                BackgroundColor="LightGreen"
+                Command="{Binding GoToFilterPageCommand}"
+                     Opacity="0.7"
+                WidthRequest="70"
+                HorizontalOptions="End"
+                VerticalOptions="End">
+        </ImageButton>
+        
+    </Grid>
+</ContentPage>

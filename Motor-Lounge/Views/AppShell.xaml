@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="Motor_Lounge.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Motor_Lounge.Views"
+       Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent Title="Login"
+                  ContentTemplate="{DataTemplate local:LoginPage}"
+                  Route="LoginPage" />
+
+    <ShellContent Title="Details"
+                  ContentTemplate="{DataTemplate local:CarDetailsPage}"
+                  Route="DetailsPage" />
+
+    <TabBar x:Name="TabBar"
+            IsVisible="True"
+            Route="Home">
+        <Tab Title="Main" Icon="home.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" 
+                          Title="Main"/>
+        </Tab>
+        <Tab Title="CarPage" Icon="car.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:CarPage}" />
+        </Tab>
+        <Tab Title="Settings" Icon="settings.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

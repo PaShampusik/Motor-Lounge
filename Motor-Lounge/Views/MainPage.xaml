@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Motor_Lounge.Views.MainPage"
+             xmlns:models="clr-namespace:Motor_Lounge.ViewModels"
+             x:DataType="models:MainViewModel"
+             BackgroundColor="{StaticResource Gray100}"
+             Shell.NavBarIsVisible ="False"
+             Shell.FlyoutItemIsVisible="False"
+             >
+
+    <!-- Header -->
+    <StackLayout Padding="12"
+                 BackgroundColor="#2196F3"
+                 HeightRequest="120">
+        <Label Text="{Binding Greetings}"
+               TextColor="White"
+               FontSize="24" />
+        <Label Text="We accept applications seven days a week 24/7"
+               TextColor="White"
+               FontSize="Medium" />
+    </StackLayout>
+
+    <!-- Body -->
+    
+
+</ContentPage>
