@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Motor_Lounge.Models.Users
+namespace Motor_Lounge.Entities.Users
 {
     public class User : Entity
     {

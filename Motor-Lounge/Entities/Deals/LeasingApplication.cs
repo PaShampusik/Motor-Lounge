@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Motor_Lounge.Models.Deals
+namespace Motor_Lounge.Entities.Deals
 {
     public class LeasingApplication : Deal
     {

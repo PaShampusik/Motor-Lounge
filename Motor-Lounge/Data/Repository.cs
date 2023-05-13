@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Motor_Lounge.Entities;
-using Motor_Lounge.Models.Cars;
-using Motor_Lounge.Models.Users;
+using Motor_Lounge.Entities.Cars;
+using Motor_Lounge.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +24,7 @@ namespace Motor_Lounge.Data
         public async Task AddAsync(User entity, CancellationToken cancellationToken = default)
         {
             await entities.AddAsync(entity, cancellationToken);
+
         }
 
         public void DeleteAsync(User entity, CancellationToken cancellationToken = default)

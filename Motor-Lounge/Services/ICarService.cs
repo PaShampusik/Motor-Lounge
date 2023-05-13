@@ -1,4 +1,4 @@
-﻿using Motor_Lounge.Models.Cars;
+﻿using Motor_Lounge.Entities.Cars;
 
 namespace Motor_Lounge.Services
 {

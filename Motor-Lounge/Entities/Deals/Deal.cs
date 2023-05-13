@@ -1,15 +1,15 @@
 ﻿using Microsoft.VisualBasic;
-using Motor_Lounge.Models.Cars;
-using Motor_Lounge.Models.Helpers;
-using Motor_Lounge.Models.Users;
+using Motor_Lounge.Entities.Cars;
+using Motor_Lounge.Entities.Helpers;
+using Motor_Lounge.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Information = Motor_Lounge.Models.Helpers.Information;
+using Information = Motor_Lounge.Entities.Helpers.Information;
 
-namespace Motor_Lounge.Models.Deals
+namespace Motor_Lounge.Entities.Deals
 {
     public class Deal
     {

@@ -1,5 +1,5 @@
 ﻿using Motor_Lounge.Data;
-using Motor_Lounge.Models.Cars;
+using Motor_Lounge.Entities.Cars;
 
 namespace Motor_Lounge.Services
 {
@@ -14,12 +14,14 @@ namespace Motor_Lounge.Services
 
         public Task AddAsync(Car item)
         {
-            return unitOfWork.carRepository.AddAsync(item);
+            unitOfWork.carRepository.AddAsync(item);
+            return unitOfWork.SaveAllAsync();
         }
 
         public void DeleteAsync(Car item)
         {
             unitOfWork.carRepository.DeleteAsync(item);
+            unitOfWork.SaveAllAsync();
         }
 
         public Task<IReadOnlyList<Car>> GetAllAsync()

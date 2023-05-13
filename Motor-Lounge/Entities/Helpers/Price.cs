@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Motor_Lounge.Models.Helpers
+namespace Motor_Lounge.Entities.Helpers
 {
     public class Price
     {

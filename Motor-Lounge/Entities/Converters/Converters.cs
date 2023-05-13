@@ -2,8 +2,8 @@
 using System.Globalization;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Motor_Lounge.Models.Cars;
-using Motor_Lounge.Models.Helpers;
+using Motor_Lounge.Entities.Cars;
+using Motor_Lounge.Entities.Helpers;
 using Newtonsoft.Json;
 
 namespace Motor_Lounge.Entities.Converters

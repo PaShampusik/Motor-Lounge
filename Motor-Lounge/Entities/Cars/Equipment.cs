@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Motor_Lounge.Models.Cars
+namespace Motor_Lounge.Entities.Cars
 {
     public class Equipment
     {
-        public string NameOfFeatures;
-        public string Features;
+        public string NameOfFeatures { get; set; }//
+        public string Features { get; set; }//
 
         public Equipment(string nameOfFeatures, string features) 
         {

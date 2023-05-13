@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch"
              x:Class="Motor_Lounge.Views.SettingsPage"
              Title="SettingsPage"
              BackgroundColor="White"
@@ -19,17 +20,45 @@
                    FontSize="Default"
                    FontAttributes="Bold"
                    VerticalOptions="Center" />
-            <Switch x:Name="ThemeToggle"
-                    BackgroundColor="{StaticResource Gray100}"
-                    
-                    HorizontalOptions="End"
-                    ThumbColor="Black"
-                    Margin="50, 0 ,0, 0"
-                    OnColor="Black"
-                    WidthRequest="30"
-                    HeightRequest="30"
-                    IsToggled="false"
-                    VerticalOptions="CenterAndExpand"/>
+            <switch:CustomSwitch BackgroundColor="White"
+                                 HeightRequest="50"
+                                 IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                                 KnobBackgroundColor="Transparent"
+                                 KnobHeight="36"
+                                 KnobLimit="Boundary"
+                                 KnobWidth="45"
+                                 StrokeThickness="3"
+                                 SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
+                                 Toggled="CustomSwitch_Toggled"
+                                 ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                                 WidthRequest="90">
+                <switch:CustomSwitch.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </switch:CustomSwitch.StrokeShape>
+                <switch:CustomSwitch.KnobStrokeShape>
+                    <RoundRectangle CornerRadius="18" />
+                </switch:CustomSwitch.KnobStrokeShape>
+                <switch:CustomSwitch.KnobContent>
+                    <Grid x:Name="KnobContent"
+                          Margin="55,0,10,0"
+                          ColumnDefinitions="45,45"
+                          HeightRequest="40"
+                          WidthRequest="90">
+                        <Image Grid.Column="0"
+                               Aspect="AspectFit"
+                               HeightRequest="35"
+                               HorizontalOptions="Center"
+                               Source="sun_icon"
+                               VerticalOptions="Center" />
+                        <Image Grid.Column="1"
+                               Aspect="AspectFit"
+                               HeightRequest="35"
+                               HorizontalOptions="Center"
+                               Source="moon_icon"
+                               VerticalOptions="Center" />
+                    </Grid>
+                </switch:CustomSwitch.KnobContent>
+            </switch:CustomSwitch>
         </StackLayout>
 
         <!-- Чекбокс для сохранения входных данных -->

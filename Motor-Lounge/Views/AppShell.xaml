@@ -9,11 +9,16 @@
                   ContentTemplate="{DataTemplate local:LoginPage}"
                   Route="LoginPage" />
 
+    <ShellContent Title="Details"
+                  ContentTemplate="{DataTemplate local:CarDetailsPage}"
+                  Route="DetailsPage" />
+
     <TabBar x:Name="TabBar"
             IsVisible="True"
             Route="Home">
         <Tab Title="Main" Icon="home.svg">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" 
+                          Title="Main"/>
         </Tab>
         <Tab Title="CarPage" Icon="car.svg">
             <ShellContent ContentTemplate="{DataTemplate local:CarPage}" />

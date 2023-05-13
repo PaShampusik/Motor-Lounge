@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Motor_Lounge.Entities.Converters;
-using Motor_Lounge.Models.Cars;
-using Motor_Lounge.Models.Helpers;
-using Motor_Lounge.Models.Users;
+using Motor_Lounge.Entities.Cars;
+using Motor_Lounge.Entities.Helpers;
+using Motor_Lounge.Entities.Users;
 
 namespace Motor_Lounge.Data
 {

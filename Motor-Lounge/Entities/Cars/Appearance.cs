@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Motor_Lounge.Models.Cars
+namespace Motor_Lounge.Entities.Cars
 {
     public class Appearance
     {
-        public string Color {  get; set; }
-        public string InteriorColor { get; set; }
-        public string CarColor { get; set; }
-        public string InteriorMaterial { get; set; }
+        public string Color {  get; set; }//
+        public string InteriorColor { get; set; }//
+        public string CarColor { get; set; }//
+        public string InteriorMaterial { get; set; }//
 
         public Appearance(string color, string interiorColor, string carColor, string InteriorMaterail)
         {

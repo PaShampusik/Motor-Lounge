@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Motor_Lounge.Models.Cars
+namespace Motor_Lounge.Entities.Cars
 {
     public class Specification
     {
-        public int Year;
-        public string Brand;
-        public string Model;
+        public int Year { get; set; }//
+        public string Brand { get; set; }//
+        public string Model { get; set; }//
 
         public Specification(int year, string brand, string model)
         {

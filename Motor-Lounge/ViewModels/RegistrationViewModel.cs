@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Motor_Lounge.Models.Users;
+using Motor_Lounge.Entities.Users;
 using Motor_Lounge.Services;
 using Motor_Lounge.ViewModels.Base;
 using System.Security.Cryptography;

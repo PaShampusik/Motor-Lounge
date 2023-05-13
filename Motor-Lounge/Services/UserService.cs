@@ -1,5 +1,5 @@
 ﻿using Motor_Lounge.Data;
-using Motor_Lounge.Models.Users;
+using Motor_Lounge.Entities.Users;
 
 namespace Motor_Lounge.Services
 {
