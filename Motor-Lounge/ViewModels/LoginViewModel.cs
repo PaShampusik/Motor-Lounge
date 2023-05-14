@@ -2,10 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using Motor_Lounge.Services;
 using Motor_Lounge.ViewModels.Base;
-using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows.Input;
 
 namespace Motor_Lounge.ViewModels
 {

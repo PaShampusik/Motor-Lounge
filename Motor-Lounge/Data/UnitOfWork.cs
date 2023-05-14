@@ -1,4 +1,5 @@
 ﻿using Motor_Lounge.Entities.Cars;
+using Motor_Lounge.Entities.Helpers;
 using Motor_Lounge.Entities.Users;
 
 namespace Motor_Lounge.Data
@@ -11,16 +12,21 @@ namespace Motor_Lounge.Data
 
         private readonly IRepository<User> userRepository;
 
+        private readonly IRepository<Information> newsRepository;
+
         public UnitOfWork(AppDbContext _context)
         {
             context = _context;
             carRepository = new CarRepository(context);
             userRepository = new UserRepository(context);
+            newsRepository = new InformationRepository(context);
         }
 
         IRepository<User> IUnitOfWork.userRepository => userRepository;
 
         IRepository<Car> IUnitOfWork.carRepository => carRepository;
+
+        IRepository<Information> IUnitOfWork.newsRepository => newsRepository;
 
         public async Task CreateDatabaseAsync()
         {

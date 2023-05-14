@@ -59,6 +59,14 @@ namespace Motor_Lounge.Data
             modelBuilder.Entity<Car>()
                 .Property(c => c.Specification)
                 .HasConversion(new SpecificationConverter());
+
+            modelBuilder.Entity<Car>()
+                .Property(c => c.Specification)
+                .HasConversion(new SpecificationConverter());
+
+
+            //for offers on main page
+            modelBuilder.Entity<Information>().Property(x => x.Info).IsRequired();
         }
     }
 }

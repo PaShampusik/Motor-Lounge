@@ -8,6 +8,7 @@ using System.Reflection;
 using CommunityToolkit.Maui;
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Entities.Helpers;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace Motor_Lounge.Views;
 
@@ -40,22 +41,24 @@ public static class MauiProgram
         builder.Services.AddSingleton<ICarService, CarService>();
         builder.Services.AddSingleton<IUserService, UserService>();
         builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
+        builder.Services.AddSingleton<IInformationService, InformationService>();
 
         //Registering ViewModels
         builder.Services.AddSingleton<LoginViewModel>();
+        builder.Services.AddSingleton<FilterViewModel>();
         builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddSingleton<SettingsViewModel>();
         builder.Services.AddSingleton<RegistrationViewModel>();
-        builder.Services.AddSingleton<CarViewModel>(); 
+        builder.Services.AddSingleton<CarViewModel>();
         builder.Services.AddSingleton<CarDetailsViewModel>();
 
         //Registering Views
         builder.Services.AddTransient<LoginPage>();
         builder.Services.AddTransient<RegistrationPage>();
         builder.Services.AddTransient<MainPage>();
-        builder.Services.AddTransient<CarPage>();
+        builder.Services.AddSingleton<CarPage>();
         builder.Services.AddTransient<CarDetailsPage>();
-        builder.Services.AddTransient<FilterPage>();
+        builder.Services.AddSingleton<FilterPage>();
         builder.Services.AddTransient<SettingsPage>();
 
         AddDbContext(builder);
@@ -122,7 +125,7 @@ public static class MauiProgram
     new Photo(new List<string>{"https://example.com/car4.jpg", "https://example.com/car4-rear.jpg"}),
     new Price{ IndividualPrice = 45000, CorporationPrice = 42000 },
     new Appearance("Blue", "Gray", "Blue", "Leather"),
-    new Characteristics("Gasoline", 3.5m, 10000, "Automatic", "4WD", "Truck", 4),
+    new Characteristics("Gasoline", 3.5m, 10000, "Automatic", "AWD", "Truck", 4),
     new Information("This pickup truck is perfect for work or play.")),
 
                 new Car(
@@ -139,7 +142,7 @@ public static class MauiProgram
     new Photo(new List<string> { "https://example.com/car6-1.jpg", "https://example.com/car6-2.jpg" }),
     new Price { IndividualPrice = 55000, CorporationPrice = 50000 },
     new Appearance("Red", "Black", "Silver", "Leather"),
-    new Characteristics("Gasoline", 3.0M, 25000, "Automatic", "All-wheel drive", "SUV", 5),
+    new Characteristics("Gasoline", 3.0M, 25000, "Automatic", "AWD", "SUV", 5),
     new Information ("One owner, accident-free" )),
 
                   new Car(new Specification(2022, "Audi", "A4"),
@@ -147,7 +150,7 @@ public static class MauiProgram
     new Photo(new List<string> { "https://example.com/car7-1.jpg", "https://example.com/car7-2.jpg", "https://example.com/car7-3.jpg" }),
     new Price { IndividualPrice = 45000, CorporationPrice = 42000 },
     new Appearance("Black", "Beige", "Black", "Leather"),
-    new Characteristics("Gasoline", 2.0M, 15000, "Automatic", "Front-wheel drive", "Sedan", 4),
+    new Characteristics("Gasoline", 2.0M, 15000, "Automatic", "FWD", "Sedan", 4),
     new Information ("Clean title, low mileage" )),
 
                     new Car(new Specification(2020, "Toyota", "RAV4"),
@@ -155,7 +158,7 @@ public static class MauiProgram
     new Photo(new List<string> { "https://example.com/car8-1.jpg", "https://example.com/car8-2.jpg" }),
     new Price { IndividualPrice = 32000, CorporationPrice = 30000 },
     new Appearance("White", "Black", "Silver", "Fabric"),
-    new Characteristics("Gasoline", 2.5M, 20000, "Automatic", "All-wheel drive", "SUV", 5),
+    new Characteristics("Gasoline", 2.5M, 20000, "Automatic", "AWD", "SUV", 5),
     new Information ("Well-maintained, non-smoker" )),
 
                     new Car(new Specification(2018, "Honda", "Civic"),
@@ -163,7 +166,7 @@ public static class MauiProgram
     new Photo(new List<string> { "https://example.com/car9-1.jpg", "https://example.com/car9-2.jpg" }),
     new Price { IndividualPrice = 18000, CorporationPrice = 16000 },
     new Appearance("Gray", "Black", "Gray", "Leather"),
-    new Characteristics("Gasoline", 1.5M, 50000, "Automatic", "Front-wheel drive", "Sedan", 4),
+    new Characteristics("Gasoline", 1.5M, 50000, "Automatic", "FWD", "Sedan", 4),
     new Information ("Excellent condition, clean title" )),
 
                     new Car(new Specification(2017, "Nissan", "Altima"),
@@ -171,12 +174,67 @@ public static class MauiProgram
     new Photo(new List<string> { "https://example.com/car10-1.jpg", "https://example.com/car10-2.jpg", "https://example.com/car10-3.jpg" }),
     new Price { IndividualPrice = 12000, CorporationPrice = 10000 },
     new Appearance("Gray", "Black", "Gray", "Leather"),
-    new Characteristics("Gasoline", 1.5M, 50000, "Automatic", "Front-wheel drive", "Sedan", 4),
-    new Information ("Excellent condition, clean title" ))};
+    new Characteristics("Gasoline", 1.5M, 50000, "Automatic", "FWD", "Sedan", 4),
+    new Information ("Excellent condition, clean title" )),
+
+                    new Car(
+    new Specification(2022, "Ford", "Mustang"),
+    new Equipment("Heated Seats", "Remote Start"),
+    new Photo(new List<string>{"https://example.com/car2.jpg", "https://example.com/car2-rear.jpg"}),
+    new Price{ IndividualPrice = 30000, CorporationPrice = 28000 },
+    new Appearance("Black", "White", "Black", "Leather"),
+    new Characteristics("Gasoline", 3.0m, 0, "Automatic", "RWD", "Coupe", 2),
+    new Information("This car is in like-new condition, with very low mileage and a clean Carfax report.")),                  
+
+                    new Car(
+    new Specification(2023, "Tesla", "Model S"),
+    new Equipment("Autopilot", "All-Wheel Drive"),
+    new Photo(new List<string>{"https://example.com/car4.jpg", "https://example.com/car4-rear.jpg"}),
+    new Price{ IndividualPrice = 80000, CorporationPrice = 78000 },
+    new Appearance("White", "Black", "White", "Leather"),
+    new Characteristics("Electric", 0, 1000, "Automatic", "AWD", "Sedan", 4),
+    new Information("This car is fully loaded with all available options and has never been in an accident.")),
+
+                    new Car(
+    new Specification(2020, "Honda", "Accord"),
+    new Equipment("Sunroof", "Heated Mirrors"),
+    new Photo(new List<string>{"https://example.com/car5.jpg", "https://example.com/car5-rear.jpg"}),
+    new Price{ IndividualPrice = 22000, CorporationPrice = 21000 },
+    new Appearance("Gray", "Black", "Gray", "Leather"),
+    new Characteristics("Gasoline", 2.0m, 0, "Automatic", "FWD", "Sedan", 5),
+    new Information("This car has only had one owner and comes with a complete service history.")),
+
+                    new Car(
+    new Specification(2022, "BMW", "X5"),
+    new Equipment("Navigation System", "Panoramic Sunroof"),
+    new Photo(new List<string>{"https://example.com/car6.jpg", "https://example.com/car6-rear.jpg"}),
+    new Price{ IndividualPrice = 60000, CorporationPrice = 58000 },
+    new Appearance("Blue", "Black", "Blue", "Leather"),
+    new Characteristics("Gasoline", 3.0m, 0, "Manual", "AWD", "SUV", 5),
+    new Information("This car is in excellent condition, with low mileage and a clean Carfax report."))};
 
         foreach (var car in cars)
         {
             await unitOfWork.carRepository.AddAsync(car);
+        }
+        await unitOfWork.SaveAllAsync();
+
+
+        IList<Information> news = new List<Information>()
+        {
+            new Information("https://dummyimage.com/150x60/a6a6ff"),
+            new Information("https://dummyimage.com/150x60/00dd00"),
+            new Information("https://dummyimage.com/150x60/a6a6ff"),
+            new Information("https://dummyimage.com/150x60/00dd00"),
+            new Information("https://dummyimage.com/400x180/c0c0c0"),
+            new Information("https://dummyimage.com/150x60/a6a6ff"),
+            new Information("https://dummyimage.com/400x180/c0c0c0"),
+            new Information("https://dummyimage.com/150x60/a6a6ff"),
+        };
+
+        foreach (var news_ in news)
+        {
+            await unitOfWork.newsRepository.AddAsync(news_);
         }
         await unitOfWork.SaveAllAsync();
     }

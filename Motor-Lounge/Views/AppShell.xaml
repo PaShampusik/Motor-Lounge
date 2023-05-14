@@ -13,6 +13,10 @@
                   ContentTemplate="{DataTemplate local:CarDetailsPage}"
                   Route="DetailsPage" />
 
+    <ShellContent Title="Filter"
+                  ContentTemplate="{DataTemplate local:FilterPage}"
+                  Route="FilterPage" />
+
     <TabBar x:Name="TabBar"
             IsVisible="True"
             Route="Home">
