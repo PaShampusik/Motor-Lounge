@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Motor_Lounge.Entities;
 using Motor_Lounge.Entities.Cars;
+using Motor_Lounge.Entities.Helpers;
 using Motor_Lounge.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -140,6 +142,68 @@ namespace Motor_Lounge.Data
         }
 
         public async Task UpdateAsync(Car entity, CancellationToken cancellationToken = default)
+        {
+            var old = await GetByIdAsync(entity.Id);
+            dbContext.Entry(old).CurrentValues.SetValues(entity);
+        }
+    }
+
+    public class InformationRepository : IRepository<Information>
+    {
+        private readonly DbContext dbContext;
+        private readonly DbSet<Information> entities;
+
+        public InformationRepository(DbContext _dbContext)
+        {
+            dbContext = _dbContext;
+            entities = dbContext.Set<Information>();
+        }
+
+        public async Task AddAsync(Information entity, CancellationToken cancellationToken = default)
+        {
+            await entities.AddAsync(entity, cancellationToken);
+        }
+
+        public void DeleteAsync(Information entity, CancellationToken cancellationToken = default)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity), "Entity cannot be null");
+            }
+            entities.Remove(entity);
+        }
+
+        public async Task<Information> FirstAsync(System.Linq.Expressions.Expression<Func<Information, bool>> filter, CancellationToken cancellationToken = default)
+        {
+            return await entities.FirstAsync(filter, cancellationToken);
+        }
+
+        public async Task<Information> GetByIdAsync(int id, CancellationToken cancellationToken = default, params System.Linq.Expressions.Expression<Func<Information, object>>[]? includesProperties)
+        {
+            var query = entities.AsQueryable();
+            if (includesProperties != null)
+            {
+                query = includesProperties.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
+            }
+            return await query.FirstAsync(e => e.Id == id, cancellationToken);
+        }
+
+        public async Task<IReadOnlyList<Information>> ListAllAsync(CancellationToken cancellationToken = default)
+        {
+            return await entities.ToListAsync(cancellationToken);
+        }
+
+        public async Task<IReadOnlyList<Information>> ListAsync(System.Linq.Expressions.Expression<Func<Information, bool>> filter, CancellationToken cancellationToken = default, params System.Linq.Expressions.Expression<Func<Information, object>>[]? includesProperties)
+        {
+            var query = entities.Where(filter);
+            if (includesProperties != null)
+            {
+                query = includesProperties.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
+            }
+            return await query.ToListAsync(cancellationToken);
+        }
+
+        public async Task UpdateAsync(Information entity, CancellationToken cancellationToken = default)
         {
             var old = await GetByIdAsync(entity.Id);
             dbContext.Entry(old).CurrentValues.SetValues(entity);

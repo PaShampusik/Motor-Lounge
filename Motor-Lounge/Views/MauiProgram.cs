@@ -8,6 +8,7 @@ using System.Reflection;
 using CommunityToolkit.Maui;
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Entities.Helpers;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace Motor_Lounge.Views;
 
@@ -40,13 +41,15 @@ public static class MauiProgram
         builder.Services.AddSingleton<ICarService, CarService>();
         builder.Services.AddSingleton<IUserService, UserService>();
         builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
+        builder.Services.AddSingleton<IInformationService, InformationService>();
 
         //Registering ViewModels
         builder.Services.AddSingleton<LoginViewModel>();
+        builder.Services.AddSingleton<FilterViewModel>();
         builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddSingleton<SettingsViewModel>();
         builder.Services.AddSingleton<RegistrationViewModel>();
-        builder.Services.AddSingleton<CarViewModel>(); 
+        builder.Services.AddSingleton<CarViewModel>();
         builder.Services.AddSingleton<CarDetailsViewModel>();
 
         //Registering Views
@@ -177,6 +180,25 @@ public static class MauiProgram
         foreach (var car in cars)
         {
             await unitOfWork.carRepository.AddAsync(car);
+        }
+        await unitOfWork.SaveAllAsync();
+
+
+        IList<Information> news = new List<Information>()
+        {
+            new Information("https://dummyimage.com/150x60/a6a6ff"),
+            new Information("https://dummyimage.com/150x60/00dd00"),
+            new Information("https://dummyimage.com/150x60/a6a6ff"),
+            new Information("https://dummyimage.com/150x60/00dd00"),
+            new Information("https://dummyimage.com/400x180/c0c0c0"),
+            new Information("https://dummyimage.com/150x60/a6a6ff"),
+            new Information("https://dummyimage.com/400x180/c0c0c0"),
+            new Information("https://dummyimage.com/150x60/a6a6ff"),
+        };
+
+        foreach (var news_ in news)
+        {
+            await unitOfWork.newsRepository.AddAsync(news_);
         }
         await unitOfWork.SaveAllAsync();
     }

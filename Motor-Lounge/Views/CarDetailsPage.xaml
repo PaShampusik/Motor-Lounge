@@ -27,319 +27,349 @@
                     </Image>
                 </Frame>
 
-                <Label Text="Total information"
-                       TextColor="Black"
-                       Margin="0,7,0,0"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Brand"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Specification.Brand}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Model"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Specification.Model}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Year"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Specification.Year}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Individual Price"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Price.IndividualPrice, StringFormat= '{0:D} BYN'}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           FontAttributes="Bold"
-                           Grid.Column="1"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Corporation Price"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Price.CorporationPrice, StringFormat= '{0:D} BYN'}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Milleage"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Characteristics.Milleage, StringFormat= '{0:D} km'}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="BodyType"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Characteristics.BodyType}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Number Of Doors"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Characteristics.NumOfDoors}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
+                <Frame BackgroundColor="White"
+                       Margin="5,5,5,5"
+                       BorderColor="White">
+                    <VerticalStackLayout>
+                        <Label Text="Total information"
+                               TextColor="Black"
+                               Margin="0,7,0,0"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" />
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Brand"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Specification.Brand}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Model"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Specification.Model}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Year"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Specification.Year}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Individual Price"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Price.IndividualPrice, StringFormat= '{0:D} BYN'}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Grid.Column="1"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Corporation Price"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Price.CorporationPrice, StringFormat= '{0:D} BYN'}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Milleage"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Characteristics.Milleage, StringFormat= '{0:D} km'}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="BodyType"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Characteristics.BodyType}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Number Of Doors"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Characteristics.NumOfDoors}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
 
-                <Label Text="Appearance"
-                       TextColor="Black"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       Margin="0,7,0,0"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Car Color"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Appearance.CarColor}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Color"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Appearance.Color}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Interior Color"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Appearance.InteriorColor}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           FontAttributes="Bold"
-                           Grid.Column="1"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Interior Material"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Appearance.InteriorMaterial}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           FontAttributes="Bold"
-                           Grid.Column="1"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
+                <Frame BackgroundColor="White"
+                       Margin="5,5,5,5"
+                       BorderColor="White">
+                    <VerticalStackLayout>
+                        <Label Text="Appearance"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Margin="0,7,0,0"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" />
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Car Color"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Appearance.CarColor}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Color"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Appearance.Color}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Interior Color"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Appearance.InteriorColor}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Grid.Column="1"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Interior Material"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Appearance.InteriorMaterial}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Grid.Column="1"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
 
-                <Label Text="Specification"
-                       TextColor="Black"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       Margin="0,7,0,0"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Engine Type"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Characteristics.EngineType}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Engine Volume"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Characteristics.EngineVolume, StringFormat= '{0:D} L'}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Gearbox Type"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Characteristics.GearboxType}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *"
-                      Margin="20,0,20,0">
-                    <Label Text="Drive Type"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center" />
-                    <Label Text="{Binding SelectedObject.Characteristics.DriveType}"
-                           TextColor="Black"
-                           FontSize="Small"
-                           Grid.Column="1"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           HorizontalOptions="End" />
-                </Grid>
+                <Frame BackgroundColor="White"
+                       Margin="5,5,5,5"
+                       BorderColor="White">
+                    <VerticalStackLayout>
+                        <Label Text="Specification"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Margin="0,7,0,0"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" />
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Engine Type"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Characteristics.EngineType}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Engine Volume"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Characteristics.EngineVolume, StringFormat= '{0:D} L'}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Gearbox Type"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Characteristics.GearboxType}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*, *"
+                              Margin="20,0,20,0">
+                            <Label Text="Drive Type"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding SelectedObject.Characteristics.DriveType}"
+                                   TextColor="Black"
+                                   FontSize="Small"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
 
-                <Label Text="Equipment"
-                       TextColor="Black"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       Margin="0,7,0,0"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
+                <Frame BackgroundColor="White"
+                       Margin="5,5,5,5"
+                       BorderColor="White">
+                    <VerticalStackLayout>
+                        <Label Text="Equipment"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Margin="0,7,0,0"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" />
 
-                <Label Text="{Binding SelectedObject.Equipment.Features}"
-                       TextColor="Black"
-                       FontSize="Small"
-                       FontAttributes="Bold"
-                       VerticalOptions="Center" />
-                <Label Text="{Binding SelectedObject.Equipment.NameOfFeatures}"
-                       TextColor="Black"
-                       FontSize="Small"
-                       FontAttributes="Bold"
-                       VerticalOptions="Center" />
+                        <Label Text="{Binding SelectedObject.Equipment.Features}"
+                               TextColor="Black"
+                               FontSize="Small"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center" />
+                        <Label Text="{Binding SelectedObject.Equipment.NameOfFeatures}"
+                               TextColor="Black"
+                               FontSize="Small"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center" />
+                    </VerticalStackLayout>
+                </Frame>
 
-                <Label Text="Other Information"
-                       TextColor="Black"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       Margin="0,7,0,0"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
+                <Frame BackgroundColor="White"
+                       Margin="5,5,5,5"
+                       BorderColor="White">
+                    <VerticalStackLayout>
+                        <Label Text="Other Information"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Margin="0,7,0,0"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" />
 
-                <Label Text="{Binding SelectedObject.Information.Info}"
-                       TextColor="Black"
-                       FontSize="Small"
-                       LineBreakMode="WordWrap"
-                       FontAttributes="Bold"
-                       VerticalOptions="Center" />
+                        <Label Text="{Binding SelectedObject.Information.Info}"
+                               TextColor="Black"
+                               FontSize="Small"
+                               LineBreakMode="WordWrap"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center" />
+                    </VerticalStackLayout>
+                </Frame>
 
             </StackLayout>
         </ScrollView>

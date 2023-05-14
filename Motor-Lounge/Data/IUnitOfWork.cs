@@ -1,4 +1,5 @@
 ﻿using Motor_Lounge.Entities.Cars;
+using Motor_Lounge.Entities.Helpers;
 using Motor_Lounge.Entities.Users;
 
 namespace Motor_Lounge.Data
@@ -8,6 +9,8 @@ namespace Motor_Lounge.Data
         IRepository<User> userRepository { get; }
 
         IRepository<Car> carRepository { get; }
+
+        IRepository<Information> newsRepository { get; }
 
         public Task RemoveDatbaseAsync();
 

@@ -1,12 +1,151 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sliders="clr-namespace:Syncfusion.Maui.Sliders;assembly=Syncfusion.Maui.Sliders"
+             xmlns:behaviors="clr-namespace:Motor_Lounge.Behaviors"
              x:Class="Motor_Lounge.Views.FilterPage"
-             Title="FilterPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="FilterPage"
+             BackgroundColor="White"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <StackLayout Spacing="10"
+                     Padding="10">
+            <Label Text="Марка"
+                   FontSize="Large"
+                   TextColor="Black" />
+            <Picker ItemsSource="{Binding CarBrands}"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    TitleColor="Black"
+                    SelectedItem="{Binding SelectedCarBrand}" />
+            <Label Text="Год выпуска"
+                   FontSize="Large"
+                   TextColor="Black" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="From"
+                       TextColor="Black"
+                       FontSize="Large"></Label>
+                <Picker ItemsSource="{Binding Years}"
+                        SelectedItem="{Binding SelectedStartYear}"
+                        BackgroundColor="Gray"
+                        TextColor="Black"
+                        TitleColor="Black"
+                        WidthRequest="100" />
+                <Label Text="To"
+                       TextColor="Black"
+                       FontSize="Large"></Label>
+                <Picker ItemsSource="{Binding Years}"
+                        SelectedItem="{Binding SelectedEndYear}"
+                        BackgroundColor="Gray"
+                        TextColor="Black"
+                        TitleColor="Black"
+                        WidthRequest="100" />
+            </StackLayout>
+            <Label Text="Цена"
+                   FontSize="Large"
+                   TextColor="Black" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="From"
+                       TextColor="Black"
+                       FontSize="Large"></Label>
+                <Picker ItemsSource="{Binding Prices}"
+                        SelectedItem="{Binding SelectedStartPrice}"
+                        BackgroundColor="Gray"
+                        TextColor="Black"
+                        TitleColor="Black"
+                        WidthRequest="100" />
+                <Label Text="To"
+                       TextColor="Black"
+                       FontSize="Large"></Label>
+                <Picker ItemsSource="{Binding Prices}"
+                        SelectedItem="{Binding SelectedEndPrice}"
+                        BackgroundColor="Gray"
+                        TextColor="Black"
+                        TitleColor="Black"
+                        WidthRequest="100" />
+            </StackLayout>
+            <Label Text="Коробка передач"
+                   TextColor="Black"
+                   FontSize="Large" />
+            <StackLayout Orientation="Horizontal">
+                <VerticalStackLayout
+                    Margin="15,5,15,5">
+                    <Label Text="Any transmission"
+                           TextColor="Black"
+                           FontSize="Medium"></Label>
+                    <RadioButton GroupName="Transmission"
+                                 HorizontalOptions="Center"
+                                 IsChecked="{Binding IsAnyTransmission}" />
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Margin="15,5,15,5">
+                    <Label Text="Automatic Transmission"
+                           TextColor="Black"
+                           FontSize="Medium"></Label>
+                    <RadioButton GroupName="Transmission"
+                                 HorizontalOptions="Center"
+                                 IsChecked="{Binding IsAutomaticTransmission}" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="15,5,15,5">
+                    <Label Text="Manual Transmission"
+                           TextColor="Black"
+                           FontSize="Medium"></Label>
+                    <RadioButton GroupName="Transmission"
+                                 HorizontalOptions="Center"
+                                 IsChecked="{Binding IsManualTransmission}" />
+                </VerticalStackLayout>
+            </StackLayout>
+            <Label Text="Тип кузова"
+                   FontSize="Large"
+                   TextColor="Black" />
+            <Picker ItemsSource="{Binding CarBodyTypes}"
+                    SelectedItem="{Binding SelectedCarBodyType}"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    TitleColor="Black" />
+            <Label Text="Тип привода"
+                   FontSize="Large"
+                   TextColor="Black" />
+            <Picker ItemsSource="{Binding CarDriveTypes}"
+                    SelectedItem="{Binding SelectedCarDriveType}"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    TitleColor="Black" />
+            <Label Text="Пробег"
+                   FontSize="Large"
+                   TextColor="Black" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="From"
+                       TextColor="Black"
+                       FontSize="Large"></Label>
+                <Picker ItemsSource="{Binding Mileages}"
+                        SelectedItem="{Binding SelectedStartMileage}"
+                        BackgroundColor="Gray"
+                        TextColor="Black"
+                        TitleColor="Black"
+                        WidthRequest="100" />
+                <Label Text="To"
+                       TextColor="Black"
+                       FontSize="Large"></Label>
+                <Picker ItemsSource="{Binding Mileages}"
+                        SelectedItem="{Binding SelectedEndMileage}"
+                        BackgroundColor="Gray"
+                        TextColor="Black"
+                        TitleColor="Black"
+                        WidthRequest="100" />
+            </StackLayout>
+            <Label Text="Цвет"
+                   FontSize="Large"
+                   TextColor="Black" />
+            <Picker ItemsSource="{Binding CarColors}"
+                    SelectedItem="{Binding SelectedCarColor}"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    TitleColor="Black" />
+            <Button Text="Применить"
+                    Command="{Binding FilterCarsCommand}"
+                    BackgroundColor="LightGreen" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
