@@ -23,7 +23,7 @@
         <ScrollView Grid.Row="0"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand">
-            <StackLayout BindableLayout.ItemsSource="{Binding Cars}">
+            <StackLayout BindableLayout.ItemsSource="{Binding Cars, Mode=Default}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="local:Car">
                         <Frame BackgroundColor="White"                               
@@ -124,7 +124,7 @@
                 HeightRequest="70"
                 Margin="0, 0, 15, 15"
                      Source="filter_icon.png"
-                     Aspect="Center"
+                     Aspect="AspectFit"
                 BackgroundColor="LightGreen"
                 Command="{Binding GoToFilterPageCommand}"
                      Opacity="0.7"

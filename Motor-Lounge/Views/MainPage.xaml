@@ -34,13 +34,14 @@
             <Label Text="No matter how you pedal, Car is better!"
                    TextColor="Black"
                    FontSize="Large"
-                   Margin="0,-50,0,0"
+                   Margin="30,-50,0,0"
                    HorizontalOptions="Center"
                    VerticalOptions="Center" />
 
         </StackLayout>
         <ScrollView HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand">
+                    VerticalOptions="FillAndExpand"
+                    Margin="0,20,0,0">
             <StackLayout BindableLayout.ItemsSource="{Binding News}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="local:Information">
