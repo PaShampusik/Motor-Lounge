@@ -1,15 +1,15 @@
-﻿using Motor_Lounge.Entities.Cars;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Services;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace Motor_Lounge.ViewModels
 {
-    public partial class CarDetailsViewModel : IQueryAttributable, INotifyPropertyChanged
+    public partial class CarDetailsViewModel : ObservableObject, IQueryAttributable, INotifyPropertyChanged
     {
-        private readonly ICarService carService;
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public readonly ICarService carService;
 
         Car selectedObject;
 
@@ -31,9 +31,6 @@ namespace Motor_Lounge.ViewModels
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             SelectedObject = query["Car"] as Car;
-        }
-
-        public void OnPropertyChanged([CallerMemberName] string name = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }       
     }
 }

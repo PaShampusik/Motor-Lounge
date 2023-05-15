@@ -9,6 +9,10 @@ using CommunityToolkit.Maui;
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Entities.Helpers;
 using Syncfusion.Maui.Core.Hosting;
+using System.Security.Cryptography;
+using System.Text;
+using System.Xml.Linq;
+using Motor_Lounge.Entities.Users;
 
 namespace Motor_Lounge.Views;
 
@@ -51,6 +55,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<RegistrationViewModel>();
         builder.Services.AddSingleton<CarViewModel>();
         builder.Services.AddSingleton<CarDetailsViewModel>();
+        builder.Services.AddSingleton<AddViewModel>();
 
         //Registering Views
         builder.Services.AddTransient<LoginPage>();
@@ -58,11 +63,13 @@ public static class MauiProgram
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddSingleton<CarPage>();
         builder.Services.AddTransient<CarDetailsPage>();
+        builder.Services.AddTransient<AdminCarDetailsPage>();
+        builder.Services.AddTransient<AdminAddPage>();
         builder.Services.AddSingleton<FilterPage>();
         builder.Services.AddTransient<SettingsPage>();
 
         AddDbContext(builder);
-        //SeedData(builder);
+        SeedData(builder);
 
         return builder.Build();
     }
@@ -91,6 +98,12 @@ public static class MauiProgram
         var unitOfWork = provider.GetService<IUnitOfWork>();
         await unitOfWork.RemoveDatbaseAsync();
         await unitOfWork.CreateDatabaseAsync();
+        var reg = provider.GetService<RegistrationViewModel>();
+
+        var salt = RandomNumberGenerator.GetBytes(32);
+        await unitOfWork.userRepository.AddAsync(new User("root", "root", reg.GenerateSaltedHash(Encoding.UTF8.GetBytes("root"), salt), salt, true));
+        await unitOfWork.SaveAllAsync();
+
         IList<Car> cars = new List<Car>() {
                new Car(
     new Specification(2022, "Toyota", "Corolla"),

@@ -16,12 +16,15 @@ namespace Motor_Lounge.Entities.Users
         public byte[] HashedPassword { get; set; }
         public byte[] Salt { get; set; }
 
-        public User(string userName, string email, byte[] hashedPassword, byte[] salt)
+        public bool IsAdmin { get; set; }
+
+        public User(string userName, string email, byte[] hashedPassword, byte[] salt, bool isAdmin = false)
         {
             UserName = userName;
             Email = email;
             HashedPassword = hashedPassword;
             Salt = salt;
+            IsAdmin = isAdmin;
         }
 
         public User() { }

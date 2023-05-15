@@ -59,7 +59,7 @@ namespace Motor_Lounge.ViewModels
             }
         }
 
-        static byte[] GenerateSaltedHash(byte[] plainText, byte[] salt)
+        public byte[] GenerateSaltedHash(byte[] plainText, byte[] salt)
         {
             var sha512 = SHA512.Create();
 

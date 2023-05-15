@@ -12,6 +12,8 @@ namespace Motor_Lounge.ViewModels
         public readonly ICarService carService;
         public ObservableCollection<Car> Cars { get; set; } = new();
 
+        public bool IsAdmin { get; set; } = false;
+
         public CarViewModel(ICarService _carService)
         {
             carService = _carService;
@@ -44,7 +46,14 @@ namespace Motor_Lounge.ViewModels
             {
                 {"Car", car}
             };
-            await Shell.Current.GoToAsync($"CarDetailsPage", parameters);
+            if (IsAdmin == false)
+            {
+                await Shell.Current.GoToAsync($"CarDetailsPage", parameters);
+            }
+            else
+            {
+                await Shell.Current.GoToAsync($"AdminCarDetailsPage", parameters);
+            }
         }
     }
 }

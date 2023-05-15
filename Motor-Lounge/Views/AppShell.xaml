@@ -13,6 +13,14 @@
                   ContentTemplate="{DataTemplate local:CarDetailsPage}"
                   Route="DetailsPage" />
 
+    <ShellContent Title="Details"
+                  ContentTemplate="{DataTemplate local:AdminCarDetailsPage}"
+                  Route="AdminDetailsPage" />
+
+    <ShellContent Title="Details"
+                  ContentTemplate="{DataTemplate local:AdminAddPage}"
+                  Route="AdminAddPage" />
+
     <ShellContent Title="Filter"
                   ContentTemplate="{DataTemplate local:FilterPage}"
                   Route="FilterPage" />
