@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Motor_Lounge.Views.RegistrationPage"
              Title="RegistrationPage"
-             BackgroundColor="White">
+             Shell.TabBarIsVisible="False"
+             Shell.BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Black}}"
+             Shell.TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+             BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Black}}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -26,7 +29,7 @@
             <StackLayout Grid.Row="0"
                          Orientation="Vertical"
                          HorizontalOptions="FillAndExpand">
-                <Label TextColor="Black"
+                <Label TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                        Text="Registration of new user"
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
@@ -34,7 +37,7 @@
                        Margin="0,30,0,0"
                        Padding="0" />
                 <Frame BackgroundColor="Transparent"
-                       BorderColor="Black"
+                       BorderColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                        Padding="5"
                        Margin="20,15,50,10"
                        HorizontalOptions="FillAndExpand"
@@ -43,7 +46,7 @@
                         <Entry Text="{Binding Name, Mode=TwoWay}"
                                Placeholder="Name"
                                PlaceholderColor="Gray"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                VerticalOptions="Center"
                                HorizontalOptions="FillAndExpand">
@@ -51,7 +54,7 @@
                     </StackLayout>
                 </Frame>
                 <Frame BackgroundColor="Transparent"
-                       BorderColor="Black"
+                       BorderColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                        Padding="5"
                        Margin="20,15,50,10"
                        HorizontalOptions="FillAndExpand"
@@ -60,7 +63,7 @@
                         <Entry Text="{Binding Email, Mode=TwoWay}"
                                Placeholder="Email"
                                PlaceholderColor="Gray"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                VerticalOptions="Center"
                                HorizontalOptions="FillAndExpand">
@@ -68,7 +71,7 @@
                     </StackLayout>
                 </Frame>
                 <Frame BackgroundColor="Transparent"
-                       BorderColor="Black"
+                       BorderColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                        Padding="5"
                        Margin="20,15,50,10"
                        HorizontalOptions="FillAndExpand"
@@ -78,7 +81,7 @@
                         <Entry Text="{Binding Password, Mode=TwoWay}"
                                IsPassword="True"
                                Placeholder="Password"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                VerticalOptions="Center"
                                HorizontalOptions="FillAndExpand">
@@ -86,7 +89,7 @@
                     </StackLayout>
                 </Frame>
                 <Frame BackgroundColor="Transparent"
-                       BorderColor="Black"
+                       BorderColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                        Padding="5"
                        Margin="20,15,50,10"
                        HorizontalOptions="FillAndExpand"
@@ -96,7 +99,7 @@
                         <Entry Text="{Binding Repeatpassword, Mode=TwoWay}"
                                IsPassword="True"
                                Placeholder="Repeat Password"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                VerticalOptions="Center"
                                HorizontalOptions="FillAndExpand">
@@ -111,8 +114,8 @@
 
                     <Button Text="Sign Up"
                             Margin="20,15,50,10"
-                            BackgroundColor="#58D68D"
-                            TextColor=" White"
+                            BackgroundColor="{AppThemeBinding Light= {StaticResource Secondary}, Dark= {StaticResource Primary}}"
+                            TextColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Black}}"
                             FontAttributes="Bold"
                             CornerRadius="30"
                             HorizontalOptions="Center"

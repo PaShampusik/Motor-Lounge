@@ -5,6 +5,7 @@ using Motor_Lounge.Services;
 using Motor_Lounge.ViewModels.Base;
 using System.Security.Cryptography;
 using System.Text;
+using Application = Microsoft.Maui.Controls.Application;
 
 namespace Motor_Lounge.ViewModels
 {

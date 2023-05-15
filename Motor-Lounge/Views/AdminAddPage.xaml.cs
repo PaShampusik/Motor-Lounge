@@ -21,6 +21,6 @@ public partial class AdminAddPage : ContentPage
 		await viewModel.Save();
 		carViewModel.Cars.Clear();
 		carViewModel.GetCars();
-        await Shell.Current.GoToAsync("CarPage");
+        await Shell.Current.GoToAsync("../..");
     }
 }

@@ -1,9 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Services;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace Motor_Lounge.ViewModels
 {
