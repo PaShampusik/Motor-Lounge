@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Motor_Lounge.Views.AdminAddPage"
+             xmlns:models="clr-namespace:Motor_Lounge.ViewModels"
+             x:DataType="models:AddViewModel"
+             Title="AdminAddPage">
+    <Grid
+        RowDefinitions="*">
+        <ScrollView
+            Grid.Row="0">
+            <StackLayout>
+                <Label Text="Car Specification" />
+                <Entry Text="{Binding Specification.Year, Mode=TwoWay}"
+                       Placeholder="Year" />
+                <Entry Text="{Binding Specification.Brand, Mode=TwoWay}"
+                       Placeholder="Brand" />
+                <Entry Text="{Binding Specification.Model, Mode=TwoWay}"
+                       Placeholder="Model" />
+
+                <Label Text="Car Characteristics" />
+                <Entry Text="{Binding Characteristics.EngineType, Mode=TwoWay}"
+                       Placeholder="Engine Type" />
+                <Entry Text="{Binding Characteristics.EngineVolume, Mode=TwoWay}"
+                       Placeholder="Engine Volume" />
+                <Entry Text="{Binding Characteristics.Milleage, Mode=TwoWay}"
+                       Placeholder="Milleage" />
+                <Entry Text="{Binding Characteristics.GearboxType, Mode=TwoWay}"
+                       Placeholder="Gearbox Type" />
+                <Entry Text="{Binding Characteristics.DriveType, Mode=TwoWay}"
+                       Placeholder="Drive Type" />
+                <Entry Text="{Binding Characteristics.BodyType, Mode=TwoWay}"
+                       Placeholder="Body Type" />
+                <Entry Text="{Binding Characteristics.NumOfDoors, Mode=TwoWay}"
+                       Placeholder="Number of Doors" />
+
+                <Label Text="Car Equipment" />
+                <Entry Text="{Binding Equipment.NameOfFeatures, Mode=TwoWay}"
+                       Placeholder="Name of Features" />
+                <Entry Text="{Binding Equipment.Features}"
+                       Placeholder="Features" />
+
+                <Label Text="Car Photos" />
+                <CollectionView ItemsSource="{Binding Photo, Mode=TwoWay}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label Text="Car Price" />
+                <Entry Text="{Binding Price.IndividualPrice, Mode=TwoWay}"
+                       Placeholder="Individual Price" />
+                <Entry Text="{Binding Price.CorporationPrice, Mode=TwoWay}"
+                       Placeholder="Corporation Price" />
+
+                <Label Text="Car Appearance" />
+                <Entry Text="{Binding Appearance.Color, Mode=TwoWay}"
+                       Placeholder="Color" />
+                <Entry Text="{Binding Appearance.InteriorColor, Mode=TwoWay}"
+                       Placeholder="Interior Color" />
+                <Entry Text="{Binding Appearance.CarColor, Mode=TwoWay}"
+                       Placeholder="Car Color" />
+                <Entry Text="{Binding Appearance.InteriorMaterial, Mode=TwoWay}"
+                       Placeholder="Interior Material" />
+
+                <Label Text="Car Information" />
+                <Editor Text="{Binding Information.Info, Mode=TwoWay}"
+                        Placeholder="Information" />
+
+            </StackLayout>
+        </ScrollView>
+                <Button Text="Save"
+                        Grid.Row="0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End"
+                        Margin="0,0,0,5"
+                        Opacity="0.8"
+                        Clicked="Save" />
+    </Grid>
+</ContentPage>

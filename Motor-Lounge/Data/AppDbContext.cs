@@ -12,6 +12,8 @@ namespace Motor_Lounge.Data
 
         public DbSet<User> Users => Set<User>();
 
+        public DbSet<Information> news => Set<Information>();
+
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
