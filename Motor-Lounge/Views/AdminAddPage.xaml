@@ -3,80 +3,139 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Motor_Lounge.Views.AdminAddPage"
              xmlns:models="clr-namespace:Motor_Lounge.ViewModels"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:DataType="models:AddViewModel"
+             BackgroundColor="White"
              Title="AdminAddPage">
-    <Grid
-        RowDefinitions="*">
-        <ScrollView
-            Grid.Row="0">
+    <Grid RowDefinitions="*">
+        <ScrollView Grid.Row="0">
             <StackLayout>
-                <Label Text="Car Specification" />
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal"
+                                 VerticalOptions="Center"
+                                 Margin="0,5,0,5"
+                                 HorizontalOptions="CenterAndExpand">
+
+                        
+                        
+                        <Frame HeightRequest="200"
+                               WidthRequest="450"
+                               CornerRadius="50"
+                               IsClippedToBounds="True"
+                               BackgroundColor="{StaticResource Gray100}"
+                               BorderColor="White"
+                               Margin="20,0,50,20">
+                            <skia:SKLottieView Source="diamond.json"
+                                               RepeatCount="-1"
+                                               HeightRequest="140"
+                                               WidthRequest="250"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center" />
+
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
+                <Label Text="Car Specification"
+                       TextColor="Black" />
                 <Entry Text="{Binding Specification.Year, Mode=TwoWay}"
-                       Placeholder="Year" />
+                       Placeholder="Year"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Specification.Brand, Mode=TwoWay}"
-                       Placeholder="Brand" />
+                       Placeholder="Brand"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Specification.Model, Mode=TwoWay}"
-                       Placeholder="Model" />
+                       Placeholder="Model"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
 
-                <Label Text="Car Characteristics" />
+                <Label Text="Car Characteristics"
+                       TextColor="Black" />
                 <Entry Text="{Binding Characteristics.EngineType, Mode=TwoWay}"
-                       Placeholder="Engine Type" />
+                       Placeholder="Engine Type"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Characteristics.EngineVolume, Mode=TwoWay}"
-                       Placeholder="Engine Volume" />
+                       Placeholder="Engine Volume"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Characteristics.Milleage, Mode=TwoWay}"
-                       Placeholder="Milleage" />
+                       Placeholder="Milleage"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Characteristics.GearboxType, Mode=TwoWay}"
-                       Placeholder="Gearbox Type" />
+                       Placeholder="Gearbox Type"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Characteristics.DriveType, Mode=TwoWay}"
-                       Placeholder="Drive Type" />
+                       Placeholder="Drive Type"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Characteristics.BodyType, Mode=TwoWay}"
-                       Placeholder="Body Type" />
+                       Placeholder="Body Type"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Characteristics.NumOfDoors, Mode=TwoWay}"
-                       Placeholder="Number of Doors" />
+                       Placeholder="Number of Doors"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
 
-                <Label Text="Car Equipment" />
+                <Label Text="Car Equipment"
+                       TextColor="Black" />
                 <Entry Text="{Binding Equipment.NameOfFeatures, Mode=TwoWay}"
-                       Placeholder="Name of Features" />
+                       Placeholder="Name of Features"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Equipment.Features}"
-                       Placeholder="Features" />
+                       Placeholder="Features"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
 
-                <Label Text="Car Photos" />
-                <CollectionView ItemsSource="{Binding Photo, Mode=TwoWay}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding}" />
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-
-                <Label Text="Car Price" />
+                <Label Text="Car Price"
+                       TextColor="Black" />
                 <Entry Text="{Binding Price.IndividualPrice, Mode=TwoWay}"
-                       Placeholder="Individual Price" />
+                       Placeholder="Individual Price"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Price.CorporationPrice, Mode=TwoWay}"
-                       Placeholder="Corporation Price" />
+                       Placeholder="Corporation Price"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
 
-                <Label Text="Car Appearance" />
+                <Label Text="Car Appearance"
+                       TextColor="Black" />
                 <Entry Text="{Binding Appearance.Color, Mode=TwoWay}"
-                       Placeholder="Color" />
+                       Placeholder="Color"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Appearance.InteriorColor, Mode=TwoWay}"
-                       Placeholder="Interior Color" />
+                       Placeholder="Interior Color"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Appearance.CarColor, Mode=TwoWay}"
-                       Placeholder="Car Color" />
+                       Placeholder="Car Color"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
                 <Entry Text="{Binding Appearance.InteriorMaterial, Mode=TwoWay}"
-                       Placeholder="Interior Material" />
+                       Placeholder="Interior Material"
+                       TextColor="Black"
+                       BackgroundColor="{StaticResource Gray100}" />
 
                 <Label Text="Car Information" />
                 <Editor Text="{Binding Information.Info, Mode=TwoWay}"
-                        Placeholder="Information" />
+                        Placeholder="Information"
+                        TextColor="Black"
+                        BackgroundColor="{StaticResource Gray100}" />
 
             </StackLayout>
         </ScrollView>
-                <Button Text="Save"
-                        Grid.Row="0"
-                        HorizontalOptions="Center"
-                        VerticalOptions="End"
-                        Margin="0,0,0,5"
-                        Opacity="0.8"
-                        Clicked="Save" />
+        <Button Text="Create new offer"
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="0,0,0,5"
+                Opacity="0.8"
+                Clicked="Save" />
     </Grid>
 </ContentPage>

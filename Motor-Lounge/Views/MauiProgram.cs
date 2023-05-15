@@ -8,11 +8,10 @@ using System.Reflection;
 using CommunityToolkit.Maui;
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Entities.Helpers;
-using Syncfusion.Maui.Core.Hosting;
 using System.Security.Cryptography;
 using System.Text;
-using System.Xml.Linq;
 using Motor_Lounge.Entities.Users;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace Motor_Lounge.Views;
 
@@ -27,6 +26,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseSkiaSharp()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

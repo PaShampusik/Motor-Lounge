@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Motor_Lounge.Views.CarDetailsPage"
              xmlns:models="clr-namespace:Motor_Lounge.ViewModels"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:DataType="models:CarDetailsViewModel"
              Title="{Binding SelectedObject.Specification.Brand}"
              BackgroundColor="{StaticResource Gray100}"
@@ -19,41 +20,72 @@
             <StackLayout Orientation="Vertical"
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
-                <ScrollView
-                    HeightRequest="300"
-                    Orientation="Horizontal">
+                <ScrollView Orientation="Horizontal"
+                            BackgroundColor="White"
+                            HorizontalOptions="FillAndExpand">
                     <StackLayout Orientation="Horizontal"
                                  VerticalOptions="Center"
                                  Margin="0,5,0,5"
                                  HorizontalOptions="CenterAndExpand">
 
-                        <Frame HeightRequest="300"
-                               WidthRequest="540"
+                        <Frame HeightRequest="400"
+                               WidthRequest="650"
                                CornerRadius="50"
                                IsClippedToBounds="True"
-                               BackgroundColor="White"
+                               BackgroundColor="{StaticResource Gray100}"
                                BorderColor="White"
-                               Margin="20,0,20,0">
-                            <Image Source="{Binding SelectedObject.Photos.Photos[0]}"
-                                   Aspect="AspectFit"
-                                   Margin="-20"
-                                   VerticalOptions="Center">
-
-                            </Image>
+                               Margin="10,0,50,20">
+                            <skia:SKLottieView Source="diamond.json"
+                                               RepeatCount="-1"
+                                               HeightRequest="140"
+                                               WidthRequest="250"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center" />
 
                         </Frame>
-                        <Frame HeightRequest="300"
-                               WidthRequest="540"
-                               BackgroundColor="White"
-                               BorderColor="White"
+                        <Frame HeightRequest="400"
+                               WidthRequest="650"
                                CornerRadius="50"
                                IsClippedToBounds="True"
-                               Margin="20,0,20,0">
-                            <Image Source="{Binding SelectedObject.Photos.Photos[1]}"
-                                   Aspect="AspectFit"
-                                   Margin="-20"
-                                   VerticalOptions="Center">
-                            </Image>
+                               BackgroundColor="{StaticResource Gray100}"
+                               BorderColor="White"
+                               Margin="10,0,50,20">
+                            <skia:SKLottieView Source="diamond.json"
+                                               RepeatCount="-1"
+                                               HeightRequest="140"
+                                               WidthRequest="250"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center" />
+
+                        </Frame>
+                        <Frame HeightRequest="400"
+                               WidthRequest="650"
+                               CornerRadius="50"
+                               IsClippedToBounds="True"
+                               BackgroundColor="{StaticResource Gray100}"
+                               BorderColor="White"
+                               Margin="10,0,50,20">
+                            <skia:SKLottieView Source="diamond.json"
+                                               RepeatCount="-1"
+                                               HeightRequest="140"
+                                               WidthRequest="250"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center" />
+
+                        </Frame>
+                        <Frame HeightRequest="400"
+                               WidthRequest="650"
+                               CornerRadius="50"
+                               IsClippedToBounds="True"
+                               BackgroundColor="{StaticResource Gray100}"
+                               BorderColor="White"
+                               Margin="20,0,50,20">
+                            <skia:SKLottieView Source="diamond.json"
+                                               RepeatCount="-1"
+                                               HeightRequest="140"
+                                               WidthRequest="250"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center" />
 
                         </Frame>
                     </StackLayout>

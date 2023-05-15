@@ -5,6 +5,7 @@
              xmlns:models="clr-namespace:Motor_Lounge.ViewModels"
              x:DataType="models:MainViewModel"
              xmlns:local="clr-namespace:Motor_Lounge.Entities.Helpers"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              BackgroundColor="White"
              Shell.NavBarIsVisible="False"
              Shell.FlyoutItemIsVisible="False">
@@ -55,19 +56,19 @@
                                              VerticalOptions="Center"
                                              HorizontalOptions="CenterAndExpand">
                                     <Frame Margin="0"
-                                           BackgroundColor="White"
+                                           BackgroundColor="{StaticResource Gray100}"
                                            BorderColor="White"
                                            CornerRadius="50"
                                            IsClippedToBounds="True"
                                            HorizontalOptions="FillAndExpand"
                                            VerticalOptions="FillAndExpand">
-                                        <Image Source="{Binding Info}"
-                                               Aspect="AspectFit"
-                                               Margin="-20"
-                                               VerticalOptions="Center"
-                                               HeightRequest="570"
-                                               WidthRequest="1000">
-                                        </Image>
+                                        <skia:SKLottieView Source="diamond.json"
+                                                           RepeatCount="-1"
+                                                           HeightRequest="200"
+                                                           WidthRequest="400"
+                                                           HorizontalOptions="Center" 
+                                                           VerticalOptions="Center"/>
+                                        
                                     </Frame>
                                 </StackLayout>
                             </StackLayout>

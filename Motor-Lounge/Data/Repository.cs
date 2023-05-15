@@ -1,14 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Motor_Lounge.Entities;
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Entities.Helpers;
 using Motor_Lounge.Entities.Users;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Motor_Lounge.Data
 {
