@@ -13,7 +13,6 @@
              Shell.NavBarIsVisible="False"
              Title="CarPage">
 
-    
     <Grid HorizontalOptions="FillAndExpand"
           VerticalOptions="FillAndExpand">
         <Grid.RowDefinitions>
@@ -26,34 +25,31 @@
             <StackLayout BindableLayout.ItemsSource="{Binding Cars, Mode=Default}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="local:Car">
-                        <Frame BackgroundColor="White"                               
-                               BorderColor ="White"
-                               Margin="5,5,5,5"
-                               >
+                        <Frame BackgroundColor="White"
+                               BorderColor="White"
+                               Margin="5,5,5,5">
                             <Frame.GestureRecognizers>
 
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:CarViewModel}}, Path=GoToCarDetailsPageCommand}"
                                                       CommandParameter="{Binding}" />
 
                             </Frame.GestureRecognizers>
-                            
+
                             <StackLayout HorizontalOptions="FillAndExpand"
                                          VerticalOptions="FillAndExpand"
                                          HeightRequest="200"
-                                         Orientation="Vertical"
-                                         >
-                                <Grid
-                                    ColumnDefinitions="*, *, 0.5*, 2*"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="Start"
-                                    ColumnSpacing="3">
+                                         Orientation="Vertical">
+                                <Grid ColumnDefinitions="*, *, 0.5*, 2*"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="Start"
+                                      ColumnSpacing="3">
                                     <Label Text="{Binding Specification.Brand}"
                                            TextColor="Black"
                                            Grid.Column="0"
                                            FontAttributes="Bold"
                                            FontSize="Small"
                                            VerticalOptions="Center"
-                                           HorizontalOptions="Start"/>
+                                           HorizontalOptions="Start" />
                                     <Label Text="{Binding Specification.Model}"
                                            TextColor="Black"
                                            FontSize="Micro"
@@ -65,8 +61,8 @@
                                            FontAttributes="Bold"
                                            FontSize="Micro"
                                            Grid.Column="2"
-                                           VerticalOptions="Center"/>
-                                    <Label Text = "{Binding Price.IndividualPrice, StringFormat='{0:D} BYN'}"
+                                           VerticalOptions="Center" />
+                                    <Label Text="{Binding Price.IndividualPrice, StringFormat='{0:D} BYN'}"
                                            TextColor="Black"
                                            FontAttributes="Bold"
                                            Grid.Column="3"
@@ -75,42 +71,68 @@
                                            VerticalOptions="Center" />
                                 </Grid>
 
-                                <StackLayout Orientation="Horizontal"
-                                             VerticalOptions="Center"
-                                             Margin="0,5,0,5"
-                                             HorizontalOptions="CenterAndExpand">
-                                    <Frame
-                                        HeightRequest="140"
-                                        WidthRequest="200">
-                                        <Image>
-                                            
-                                        </Image>
-                                    </Frame>
-                                </StackLayout>
+                                <ScrollView
+                                    Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal"
+                                                 VerticalOptions="Center"
+                                                 Margin="0,5,0,5"
+                                                 HorizontalOptions="CenterAndExpand"
+                                                 >
 
-                                <Grid
-                                    ColumnDefinitions="*, *, *"
+                                        <Frame HeightRequest="140"
+                                               WidthRequest="250"
+                                               CornerRadius="50"
+                                               IsClippedToBounds="True"
+                                               BackgroundColor="White"
+                                               BorderColor ="White"
+                                               Margin="10,0,10,0">
+                                            <Image Source="{Binding Photos.Photos[0]}"
+                                                   Aspect="AspectFit"
+                                                   Margin="-20"
+                                                   VerticalOptions="Center">
+
+                                            </Image>
+                                            
+                                        </Frame>
+                                        <Frame HeightRequest="140"
+                                               WidthRequest="250"
+                                               BackgroundColor="White"
+                                               BorderColor="White"
+                                               CornerRadius="50"
+                                               IsClippedToBounds="True"
+                                               Margin="10,0,10,0">
+                                            <Image Source="{Binding Photos.Photos[1]}"
+                                                   Aspect="AspectFit"
+                                                   Margin="-20"
+                                                   VerticalOptions="Center">
+                                            </Image>
+
+                                        </Frame>
+                                    </StackLayout>
+                                </ScrollView>
+
+                                <Grid ColumnDefinitions="*, *, *"
                                       HorizontalOptions="FillAndExpand"
                                       VerticalOptions="End">
-                                    
+
                                     <Label Text="{Binding Characteristics.EngineVolume}"
                                            Grid.Column="0"
                                            TextColor="Black"
                                            FontSize="Micro"
-                                           VerticalOptions="End" 
-                                           HorizontalOptions="Start"/>
+                                           VerticalOptions="End"
+                                           HorizontalOptions="Start" />
                                     <Label Text="{Binding Characteristics.EngineType}"
                                            Grid.Column="1"
                                            TextColor="Black"
                                            FontSize="Micro"
                                            VerticalOptions="End"
-                                           HorizontalOptions="Center"/>
+                                           HorizontalOptions="Center" />
                                     <Label Text="{Binding Characteristics.GearboxType}"
                                            TextColor="Black"
                                            Grid.Column="2"
                                            FontSize="Micro"
                                            HorizontalOptions="End"
-                                           VerticalOptions="End"/>
+                                           VerticalOptions="End" />
                                 </Grid>
 
                             </StackLayout>
@@ -120,18 +142,18 @@
             </StackLayout>
         </ScrollView>
         <ImageButton Grid.Row="0"
-                CornerRadius="35"
-                HeightRequest="70"
-                Margin="0, 0, 15, 15"
+                     CornerRadius="35"
+                     HeightRequest="70"
+                     Margin="0, 0, 15, 15"
                      Source="filter_icon.png"
                      Aspect="AspectFit"
-                BackgroundColor="LightGreen"
-                Command="{Binding GoToFilterPageCommand}"
+                     BackgroundColor="LightGreen"
+                     Command="{Binding GoToFilterPageCommand}"
                      Opacity="0.7"
-                WidthRequest="70"
-                HorizontalOptions="End"
-                VerticalOptions="End">
+                     WidthRequest="70"
+                     HorizontalOptions="End"
+                     VerticalOptions="End">
         </ImageButton>
-        
+
     </Grid>
 </ContentPage>

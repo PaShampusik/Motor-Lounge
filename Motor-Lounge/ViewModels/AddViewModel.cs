@@ -18,7 +18,7 @@ namespace Motor_Lounge.ViewModels
         public Equipment equipment = new Equipment("Wifi", "Oil");
 
         [ObservableProperty]
-        public Photo photo = new Photo();
+        public Photo photo = new Photo(new List<string>() { "id4.jpg", "id4.jpg"});
 
         [ObservableProperty]
         public Price price = new Price(18000, 20000);

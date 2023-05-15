@@ -108,7 +108,7 @@ public static class MauiProgram
                new Car(
     new Specification(2022, "Toyota", "Corolla"),
     new Equipment("Premium Sound System", "Leather Seats"),
-    new Photo(new List<string>{"https://example.com/car1.jpg", "https://example.com/car1-rear.jpg"}),
+    new Photo(new List<string>{"id4.jpg", "id4.jpg"}),
     new Price{ IndividualPrice = 20000, CorporationPrice = 19000 },
     new Appearance("Red", "Black", "Red", "Leather"),
     new Characteristics("Gasoline", 2.0m, 0, "Automatic", "FWD", "Sedan", 4),
@@ -117,7 +117,7 @@ public static class MauiProgram
                 new Car(
     new Specification(2023, "BMW", "X5"),
     new Equipment("Navigation System", "Heated Seats"),
-    new Photo(new List<string>{"https://example.com/car2.jpg", "https://example.com/car2-rear.jpg"}),
+    new Photo(new List<string>{ "id4.jpg", "id4.jpg"}),
     new Price{ IndividualPrice = 65000, CorporationPrice = 63000 },
     new Appearance("Black", "Beige", "Black", "Leather"),
     new Characteristics("Diesel", 3.0m, 15000, "Automatic", "AWD", "SUV", 5),
@@ -126,7 +126,7 @@ public static class MauiProgram
                 new Car(
     new Specification(2020, "Honda", "Accord"),
     new Equipment("Sunroof", "Blind Spot Monitor"),
-    new Photo(new List<string>{"https://example.com/car3.jpg", "https://example.com/car3-rear.jpg"}),
+    new Photo(new List<string>{"id4.jpg", "id4.jpg" }),
     new Price{ IndividualPrice = 30000, CorporationPrice = 28000 },
     new Appearance("Silver", "Black", "Silver", "Cloth"),
     new Characteristics("Gasoline", 1.5m, 20000, "CVT", "FWD", "Sedan", 4),
@@ -135,7 +135,7 @@ public static class MauiProgram
                 new Car(
     new Specification(2021, "Ford", "F-150"),
     new Equipment("Towing Package", "Apple CarPlay"),
-    new Photo(new List<string>{"https://example.com/car4.jpg", "https://example.com/car4-rear.jpg"}),
+    new Photo(new List<string>{"id4.jpg", "id4.jpg" }),
     new Price{ IndividualPrice = 45000, CorporationPrice = 42000 },
     new Appearance("Blue", "Gray", "Blue", "Leather"),
     new Characteristics("Gasoline", 3.5m, 10000, "Automatic", "AWD", "Truck", 4),
@@ -144,7 +144,7 @@ public static class MauiProgram
                 new Car(
     new Specification(2019, "Jeep", "Cherokee"),
     new Equipment("Remote Start", "Android Auto"),
-    new Photo(new List<string>{"https://example.com/car5.jpg", "https://example.com/car5-rear.jpg"}),
+    new Photo(new List<string>{"id4.jpg", "id4.jpg" }),
     new Price{ IndividualPrice = 28000, CorporationPrice = 26000 },
     new Appearance("White", "Black", "White", "Leather"),
     new Characteristics("Gasoline", 2.4m, 30000, "Automatic", "FWD", "SUV", 4),
@@ -152,7 +152,7 @@ public static class MauiProgram
 
                  new Car(new Specification(2021, "BMW", "X5"),
     new Equipment("Navigation system", "GPS, Bluetooth"),
-    new Photo(new List<string> { "https://example.com/car6-1.jpg", "https://example.com/car6-2.jpg" }),
+    new Photo(new List<string> { "id4.jpg", "id4.jpg" }),
     new Price { IndividualPrice = 55000, CorporationPrice = 50000 },
     new Appearance("Red", "Black", "Silver", "Leather"),
     new Characteristics("Gasoline", 3.0M, 25000, "Automatic", "AWD", "SUV", 5),
@@ -160,7 +160,7 @@ public static class MauiProgram
 
                   new Car(new Specification(2022, "Audi", "A4"),
     new Equipment("Premium Plus package", "Bang & Olufsen audio system, Virtual Cockpit"),
-    new Photo(new List<string> { "https://example.com/car7-1.jpg", "https://example.com/car7-2.jpg", "https://example.com/car7-3.jpg" }),
+    new Photo(new List<string> { "id4.jpg", "id4.jpg" }),
     new Price { IndividualPrice = 45000, CorporationPrice = 42000 },
     new Appearance("Black", "Beige", "Black", "Leather"),
     new Characteristics("Gasoline", 2.0M, 15000, "Automatic", "FWD", "Sedan", 4),
@@ -168,7 +168,7 @@ public static class MauiProgram
 
                     new Car(new Specification(2020, "Toyota", "RAV4"),
     new Equipment("Adventure package", "All-weather floor mats, Roof rack"),
-    new Photo(new List<string> { "https://example.com/car8-1.jpg", "https://example.com/car8-2.jpg" }),
+    new Photo(new List<string> { "id4.jpg", "id4.jpg" }),
     new Price { IndividualPrice = 32000, CorporationPrice = 30000 },
     new Appearance("White", "Black", "Silver", "Fabric"),
     new Characteristics("Gasoline", 2.5M, 20000, "Automatic", "AWD", "SUV", 5),
@@ -176,7 +176,7 @@ public static class MauiProgram
 
                     new Car(new Specification(2018, "Honda", "Civic"),
     new Equipment("Touring package", "Lane departure warning, Adaptive cruise control"),
-    new Photo(new List<string> { "https://example.com/car9-1.jpg", "https://example.com/car9-2.jpg" }),
+    new Photo(new List<string> { "id4.jpg", "id4.jpg" }),
     new Price { IndividualPrice = 18000, CorporationPrice = 16000 },
     new Appearance("Gray", "Black", "Gray", "Leather"),
     new Characteristics("Gasoline", 1.5M, 50000, "Automatic", "FWD", "Sedan", 4),
@@ -184,7 +184,7 @@ public static class MauiProgram
 
                     new Car(new Specification(2017, "Nissan", "Altima"),
     new Equipment("SR package", "Sport-tuned suspension, Leather-wrapped steering wheel"),
-    new Photo(new List<string> { "https://example.com/car10-1.jpg", "https://example.com/car10-2.jpg", "https://example.com/car10-3.jpg" }),
+    new Photo(new List<string> { "id4.jpg", "id4.jpg" }),
     new Price { IndividualPrice = 12000, CorporationPrice = 10000 },
     new Appearance("Gray", "Black", "Gray", "Leather"),
     new Characteristics("Gasoline", 1.5M, 50000, "Automatic", "FWD", "Sedan", 4),
@@ -193,7 +193,7 @@ public static class MauiProgram
                     new Car(
     new Specification(2022, "Ford", "Mustang"),
     new Equipment("Heated Seats", "Remote Start"),
-    new Photo(new List<string>{"https://example.com/car2.jpg", "https://example.com/car2-rear.jpg"}),
+    new Photo(new List<string>{"id4.jpg", "id4.jpg" }),
     new Price{ IndividualPrice = 30000, CorporationPrice = 28000 },
     new Appearance("Black", "White", "Black", "Leather"),
     new Characteristics("Gasoline", 3.0m, 0, "Automatic", "RWD", "Coupe", 2),
@@ -202,7 +202,7 @@ public static class MauiProgram
                     new Car(
     new Specification(2023, "Tesla", "Model S"),
     new Equipment("Autopilot", "All-Wheel Drive"),
-    new Photo(new List<string>{"https://example.com/car4.jpg", "https://example.com/car4-rear.jpg"}),
+    new Photo(new List<string>{"id4.jpg", "id4.jpg" }),
     new Price{ IndividualPrice = 80000, CorporationPrice = 78000 },
     new Appearance("White", "Black", "White", "Leather"),
     new Characteristics("Electric", 0, 1000, "Automatic", "AWD", "Sedan", 4),
@@ -211,7 +211,7 @@ public static class MauiProgram
                     new Car(
     new Specification(2020, "Honda", "Accord"),
     new Equipment("Sunroof", "Heated Mirrors"),
-    new Photo(new List<string>{"https://example.com/car5.jpg", "https://example.com/car5-rear.jpg"}),
+    new Photo(new List<string>{"id4.jpg", "id4.jpg" }),
     new Price{ IndividualPrice = 22000, CorporationPrice = 21000 },
     new Appearance("Gray", "Black", "Gray", "Leather"),
     new Characteristics("Gasoline", 2.0m, 0, "Automatic", "FWD", "Sedan", 5),
@@ -220,7 +220,7 @@ public static class MauiProgram
                     new Car(
     new Specification(2022, "BMW", "X5"),
     new Equipment("Navigation System", "Panoramic Sunroof"),
-    new Photo(new List<string>{"https://example.com/car6.jpg", "https://example.com/car6-rear.jpg"}),
+    new Photo(new List<string>{"id4.jpg", "id4.jpg" }),
     new Price{ IndividualPrice = 60000, CorporationPrice = 58000 },
     new Appearance("Blue", "Black", "Blue", "Leather"),
     new Characteristics("Gasoline", 3.0m, 0, "Manual", "AWD", "SUV", 5),
@@ -235,14 +235,14 @@ public static class MauiProgram
 
         IList<Information> news = new List<Information>()
         {
-            new Information("https://dummyimage.com/150x60/a6a6ff"),
-            new Information("https://dummyimage.com/150x60/00dd00"),
-            new Information("https://dummyimage.com/150x60/a6a6ff"),
-            new Information("https://dummyimage.com/150x60/00dd00"),
-            new Information("https://dummyimage.com/400x180/c0c0c0"),
-            new Information("https://dummyimage.com/150x60/a6a6ff"),
-            new Information("https://dummyimage.com/400x180/c0c0c0"),
-            new Information("https://dummyimage.com/150x60/a6a6ff"),
+            new Information("id4.jpg"),
+            new Information("id4.jpg"),
+            new Information("id4.jpg"),
+            new Information("id4.jpg"),
+            new Information("id4.jpg"),
+            new Information("id4.jpg"),
+            new Information("id4.jpg"),
+            new Information("id4.jpg"),
         };
 
         foreach (var news_ in news)
