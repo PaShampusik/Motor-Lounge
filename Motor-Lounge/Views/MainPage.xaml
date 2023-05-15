@@ -50,22 +50,22 @@
                                Margin="0">
                             <StackLayout HorizontalOptions="FillAndExpand"
                                          VerticalOptions="FillAndExpand"
-                                         HeightRequest="280"
                                          Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal"
                                              VerticalOptions="Center"
                                              HorizontalOptions="CenterAndExpand">
                                     <Frame Margin="0"
-                                           BorderColor="Black"
+                                           BackgroundColor="White"
+                                           BorderColor="White"
                                            CornerRadius="50"
                                            IsClippedToBounds="True"
                                            HorizontalOptions="FillAndExpand"
                                            VerticalOptions="FillAndExpand">
                                         <Image Source="{Binding Info}"
-                                               Aspect="AspectFill"
+                                               Aspect="AspectFit"
                                                Margin="-20"
-                                               HeightRequest="280"
                                                VerticalOptions="Center"
+                                               HeightRequest="570"
                                                WidthRequest="1000">
                                         </Image>
                                     </Frame>

@@ -7,7 +7,7 @@
              Title="ADMIN DETAILS PAGE"
              BackgroundColor="{StaticResource Gray100}"
              Shell.BackgroundColor="{StaticResource Gray100}"
-             Shell.TitleColor="Black">
+             Shell.TitleColor="Yellow">
 
     <Grid RowDefinitions="*"
           HorizontalOptions="FillAndExpand"
@@ -19,29 +19,59 @@
             <StackLayout Orientation="Vertical"
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
-                <Frame>
-                    <Image Source="{Binding SelectedObject.Photos.Photos}"
-                           Aspect="AspectFit"
-                           HeightRequest="300"
-                           WidthRequest="500">
-                    </Image>
-                </Frame>
+                <ScrollView HeightRequest="340"
+                            Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal"
+                                 VerticalOptions="Center"
+                                 Margin="20,20,20,20"
+                                 HorizontalOptions="CenterAndExpand">
+
+                        <Frame HeightRequest="300"
+                               WidthRequest="540"
+                               CornerRadius="50"
+                               IsClippedToBounds="True"
+                               BackgroundColor="White"
+                               BorderColor="White"
+                               Margin="20,0,20,0">
+                            <Image Source="{Binding SelectedObject.Photos.Photos[0]}"
+                                   Aspect="AspectFit"
+                                   Margin="-40"
+                                   VerticalOptions="Center">
+
+                            </Image>
+
+                        </Frame>
+                        <Frame HeightRequest="300"
+                               WidthRequest="540"
+                               BackgroundColor="White"
+                               BorderColor="White"
+                               CornerRadius="50"
+                               IsClippedToBounds="True"
+                               Margin="20,0,20,0">
+                            <Image Source="{Binding SelectedObject.Photos.Photos[1]}"
+                                   Aspect="AspectFit"
+                                   Margin="-40"
+                                   VerticalOptions="Center">
+                            </Image>
+
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
 
                 <Frame BackgroundColor="LightYellow">
                     <HorizontalStackLayout>
-                        <Button
-                            Text="Add New Offer"
-                            FontSize="Small"
-                            BackgroundColor="Green"
-                            Clicked="Add">
-                            
+                        <Button Text="Add New Offer"
+                                FontSize="Small"
+                                BackgroundColor="Green"
+                                Clicked="Add">
+
                         </Button>
 
                         <Button Text="Delete Car"
-                            FontSize="Small"
-                            BackgroundColor="Red"
-                            Clicked="Delete">
-                            
+                                FontSize="Small"
+                                BackgroundColor="Red"
+                                Clicked="Delete"
+                                HorizontalOptions="End">
                         </Button>
                     </HorizontalStackLayout>
                 </Frame>

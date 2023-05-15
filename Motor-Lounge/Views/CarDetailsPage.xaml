@@ -19,13 +19,45 @@
             <StackLayout Orientation="Vertical"
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
-                <Frame>
-                    <Image Source="{Binding SelectedObject.Photos.Photos}"
-                           Aspect="AspectFit"
-                           HeightRequest="300"
-                           WidthRequest="500">
-                    </Image>
-                </Frame>
+                <ScrollView
+                    HeightRequest="300"
+                    Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal"
+                                 VerticalOptions="Center"
+                                 Margin="0,5,0,5"
+                                 HorizontalOptions="CenterAndExpand">
+
+                        <Frame HeightRequest="300"
+                               WidthRequest="540"
+                               CornerRadius="50"
+                               IsClippedToBounds="True"
+                               BackgroundColor="White"
+                               BorderColor="White"
+                               Margin="20,0,20,0">
+                            <Image Source="{Binding SelectedObject.Photos.Photos[0]}"
+                                   Aspect="AspectFit"
+                                   Margin="-20"
+                                   VerticalOptions="Center">
+
+                            </Image>
+
+                        </Frame>
+                        <Frame HeightRequest="300"
+                               WidthRequest="540"
+                               BackgroundColor="White"
+                               BorderColor="White"
+                               CornerRadius="50"
+                               IsClippedToBounds="True"
+                               Margin="20,0,20,0">
+                            <Image Source="{Binding SelectedObject.Photos.Photos[1]}"
+                                   Aspect="AspectFit"
+                                   Margin="-20"
+                                   VerticalOptions="Center">
+                            </Image>
+
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
 
                 <Frame BackgroundColor="White"
                        Margin="5,5,5,5"

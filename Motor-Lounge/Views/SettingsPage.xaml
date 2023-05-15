@@ -19,6 +19,7 @@
                    TextColor="Black"
                    FontSize="Default"
                    FontAttributes="Bold"
+                   Margin="10,0,40,0"
                    VerticalOptions="Center" />
             <switch:CustomSwitch BackgroundColor="White"
                                  HeightRequest="50"
@@ -69,6 +70,7 @@
                    TextColor="Black"
                    FontAttributes="Bold"
                    FontSize="Default"
+                   Margin="10,0,0,0"
                    VerticalOptions="Center" />
             <CheckBox x:Name="SaveDataCheckBox"
                       HorizontalOptions="End"

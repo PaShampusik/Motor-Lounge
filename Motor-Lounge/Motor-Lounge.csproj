@@ -60,6 +60,7 @@
 	  <None Remove="Resources\Images\car.svg" />
 	  <None Remove="Resources\Images\filter_icon.png" />
 	  <None Remove="Resources\Images\home.svg" />
+	  <None Remove="Resources\Images\id4.jpg" />
 	  <None Remove="Resources\Images\Logo.png" />
 	  <None Remove="Resources\Images\moon_icon.png" />
 	  <None Remove="Resources\Images\star_background.png" />
