@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Motor_Lounge.Services;
 using Motor_Lounge.ViewModels.Base;
 using System.Security.Cryptography;
@@ -43,7 +44,7 @@ namespace Motor_Lounge.ViewModels
                     {
                         {"User", user}
                     };
-                    await Shell.Current.GoToAsync("//Home", parameters);
+                    await Shell.Current.GoToAsync($"//Home/MainPage", parameters);
                     return;
                 }
                 else

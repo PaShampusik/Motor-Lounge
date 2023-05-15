@@ -6,8 +6,10 @@
              x:DataType="models:MainViewModel"
              xmlns:local="clr-namespace:Motor_Lounge.Entities.Helpers"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
-             BackgroundColor="White"
+             BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
              Shell.NavBarIsVisible="False"
+             Shell.TabBarUnselectedColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+             Shell.TabBarBackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
              Shell.FlyoutItemIsVisible="False">
 
     <!-- Header -->
@@ -15,14 +17,14 @@
         <StackLayout HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"
                      Margin="7,7,7,7"
-                     BackgroundColor="White"
+                     BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
                      HeightRequest="120">
             <Frame HorizontalOptions="FillAndExpand"
                    HeightRequest="150"
-                   BackgroundColor="White"
-                   Margin="0,-50,0,0"
+                   BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
+                   Margin="0,-30,0,0"
                    Padding="0"
-                   BorderColor="White">
+                   BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}">
                 <Image Source="logo.png"
                        WidthRequest="700"
                        Margin="0"
@@ -33,9 +35,9 @@
             </Frame>
 
             <Label Text="No matter how you pedal, Car is better!"
-                   TextColor="Black"
-                   FontSize="Large"
-                   Margin="30,-50,0,0"
+                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource Primary}}"
+                   FontSize="15"
+                   Margin="0,-30,0,0"
                    HorizontalOptions="Center"
                    VerticalOptions="Center" />
 
@@ -46,8 +48,8 @@
             <StackLayout BindableLayout.ItemsSource="{Binding News}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="local:Information">
-                        <Frame BackgroundColor="White"
-                               BorderColor="White"
+                        <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
+                               BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
                                Margin="0">
                             <StackLayout HorizontalOptions="FillAndExpand"
                                          VerticalOptions="FillAndExpand"
@@ -56,8 +58,8 @@
                                              VerticalOptions="Center"
                                              HorizontalOptions="CenterAndExpand">
                                     <Frame Margin="0"
-                                           BackgroundColor="{StaticResource Gray100}"
-                                           BorderColor="White"
+                                           BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}"
+                                           BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
                                            CornerRadius="50"
                                            IsClippedToBounds="True"
                                            HorizontalOptions="FillAndExpand"
@@ -66,9 +68,8 @@
                                                            RepeatCount="-1"
                                                            HeightRequest="200"
                                                            WidthRequest="400"
-                                                           HorizontalOptions="Center" 
-                                                           VerticalOptions="Center"/>
-                                        
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="Center" />
                                     </Frame>
                                 </StackLayout>
                             </StackLayout>
@@ -77,6 +78,23 @@
                 </BindableLayout.ItemTemplate>
             </StackLayout>
         </ScrollView>
+
+        <StackLayout Orientation="Horizontal">
+            <Label TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                Text  ="{Binding SelectedObject.UserName, StringFormat= 'User: {0}'}"
+                FontSize="Medium"
+                   HorizontalOptions="Start"
+                   VerticalOptions="End"
+                   Margin="5, 0, 20, 12"></Label>
+        <Button Text="Account Exit"
+                Clicked="AccountExit"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="0,0,5,5"
+                    BackgroundColor="{AppThemeBinding Light= {StaticResource Secondary}, Dark= {StaticResource Primary}}"
+                    TextColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
+                FontSize="Small"></Button>
+        </StackLayout>
     </StackLayout>
 
     <!-- Body -->

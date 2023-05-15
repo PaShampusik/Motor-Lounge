@@ -6,9 +6,9 @@
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:DataType="models:CarDetailsViewModel"
              Title="{Binding SelectedObject.Specification.Brand}"
-             BackgroundColor="{StaticResource Gray100}"
-             Shell.BackgroundColor="{StaticResource Gray100}"
-             Shell.TitleColor="Black">
+             BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+             Shell.BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+             Shell.TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}">
 
     <Grid RowDefinitions="*"
           HorizontalOptions="FillAndExpand"
@@ -21,7 +21,7 @@
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
                 <ScrollView Orientation="Horizontal"
-                            BackgroundColor="White"
+                            BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
                             HorizontalOptions="FillAndExpand">
                     <StackLayout Orientation="Horizontal"
                                  VerticalOptions="Center"
@@ -32,8 +32,8 @@
                                WidthRequest="650"
                                CornerRadius="50"
                                IsClippedToBounds="True"
-                               BackgroundColor="{StaticResource Gray100}"
-                               BorderColor="White"
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}"
+                               BorderColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
                                Margin="10,0,50,20">
                             <skia:SKLottieView Source="diamond.json"
                                                RepeatCount="-1"
@@ -47,8 +47,8 @@
                                WidthRequest="650"
                                CornerRadius="50"
                                IsClippedToBounds="True"
-                               BackgroundColor="{StaticResource Gray100}"
-                               BorderColor="White"
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}"
+                               BorderColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
                                Margin="10,0,50,20">
                             <skia:SKLottieView Source="diamond.json"
                                                RepeatCount="-1"
@@ -62,8 +62,8 @@
                                WidthRequest="650"
                                CornerRadius="50"
                                IsClippedToBounds="True"
-                               BackgroundColor="{StaticResource Gray100}"
-                               BorderColor="White"
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}"
+                               BorderColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
                                Margin="10,0,50,20">
                             <skia:SKLottieView Source="diamond.json"
                                                RepeatCount="-1"
@@ -77,9 +77,9 @@
                                WidthRequest="650"
                                CornerRadius="50"
                                IsClippedToBounds="True"
-                               BackgroundColor="{StaticResource Gray100}"
-                               BorderColor="White"
-                               Margin="20,0,50,20">
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}"
+                               BorderColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                               Margin="10,0,50,20">
                             <skia:SKLottieView Source="diamond.json"
                                                RepeatCount="-1"
                                                HeightRequest="140"
@@ -91,12 +91,12 @@
                     </StackLayout>
                 </ScrollView>
 
-                <Frame BackgroundColor="White"
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
                        Margin="5,5,5,5"
-                       BorderColor="White">
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}">
                     <VerticalStackLayout>
                         <Label Text="Total information"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                Margin="0,7,0,0"
                                FontAttributes="Bold"
                                FontSize="Medium"
@@ -105,13 +105,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Brand"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Specification.Brand}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -121,13 +121,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Model"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Specification.Model}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -137,13 +137,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Year"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Specification.Year}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -153,13 +153,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Individual Price"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Price.IndividualPrice, StringFormat= '{0:D} BYN'}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    FontAttributes="Bold"
                                    Grid.Column="1"
@@ -169,13 +169,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Corporation Price"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Price.CorporationPrice, StringFormat= '{0:D} BYN'}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -185,13 +185,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Milleage"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Characteristics.Milleage, StringFormat= '{0:D} km'}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -201,13 +201,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="BodyType"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Characteristics.BodyType}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -217,13 +217,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Number Of Doors"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Characteristics.NumOfDoors}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -233,12 +233,12 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Frame BackgroundColor="White"
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
                        Margin="5,5,5,5"
-                       BorderColor="White">
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
                     <VerticalStackLayout>
                         <Label Text="Appearance"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                FontSize="Medium"
                                Margin="0,7,0,0"
@@ -247,13 +247,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Car Color"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Appearance.CarColor}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -263,13 +263,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Color"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Appearance.Color}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -279,13 +279,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Interior Color"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Appearance.InteriorColor}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    FontAttributes="Bold"
                                    Grid.Column="1"
@@ -295,13 +295,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Interior Material"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Appearance.InteriorMaterial}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    FontAttributes="Bold"
                                    Grid.Column="1"
@@ -311,12 +311,12 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Frame BackgroundColor="White"
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
                        Margin="5,5,5,5"
-                       BorderColor="White">
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
                     <VerticalStackLayout>
                         <Label Text="Specification"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                FontSize="Medium"
                                Margin="0,7,0,0"
@@ -325,13 +325,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Engine Type"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Characteristics.EngineType}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -341,13 +341,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Engine Volume"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Characteristics.EngineVolume, StringFormat= '{0:D} L'}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -357,13 +357,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Gearbox Type"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Characteristics.GearboxType}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -373,13 +373,13 @@
                         <Grid ColumnDefinitions="*, *"
                               Margin="20,0,20,0">
                             <Label Text="Drive Type"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="0"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center" />
                             <Label Text="{Binding SelectedObject.Characteristics.DriveType}"
-                                   TextColor="Black"
+                                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                    FontSize="Small"
                                    Grid.Column="1"
                                    FontAttributes="Bold"
@@ -389,12 +389,12 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Frame BackgroundColor="White"
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
                        Margin="5,5,5,5"
-                       BorderColor="White">
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
                     <VerticalStackLayout>
                         <Label Text="Equipment"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                FontSize="Medium"
                                Margin="0,7,0,0"
@@ -402,24 +402,24 @@
                                HorizontalOptions="Center" />
 
                         <Label Text="{Binding SelectedObject.Equipment.Features}"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontSize="Small"
                                FontAttributes="Bold"
                                VerticalOptions="Center" />
                         <Label Text="{Binding SelectedObject.Equipment.NameOfFeatures}"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontSize="Small"
                                FontAttributes="Bold"
                                VerticalOptions="Center" />
                     </VerticalStackLayout>
                 </Frame>
 
-                <Frame BackgroundColor="White"
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
                        Margin="5,5,5,5"
-                       BorderColor="White">
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
                     <VerticalStackLayout>
                         <Label Text="Other Information"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                FontSize="Medium"
                                Margin="0,7,0,0"
@@ -427,7 +427,7 @@
                                HorizontalOptions="Center" />
 
                         <Label Text="{Binding SelectedObject.Information.Info}"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontSize="Small"
                                LineBreakMode="WordWrap"
                                FontAttributes="Bold"
@@ -440,8 +440,9 @@
         <Button Grid.Row="0"
                 HorizontalOptions="Center"
                 VerticalOptions="End"
-                BackgroundColor="LightGreen"
-                TextColor="Black"
+                BackgroundColor="{AppThemeBinding Light= {StaticResource Secondary}, Dark= {StaticResource Primary}}"
+                TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                Clicked="CreateApplication"
                 FontAttributes="Bold"
                 Margin="0,0,0,5"
                 Opacity="0.7"

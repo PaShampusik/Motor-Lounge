@@ -4,19 +4,20 @@
              xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch"
              x:Class="Motor_Lounge.Views.SettingsPage"
              Title="SettingsPage"
-             BackgroundColor="White"
+             BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False">
 
     <StackLayout
         HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand">
+        VerticalOptions="FillAndExpand"
+        Orientation ="Vertical">
         <!-- Переключатель темы -->
         <StackLayout Orientation="Horizontal"
                      HorizontalOptions="FillAndExpand"
                      Margin="10">
             <Label Text="Темная тема"
-                   TextColor="Black"
+                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                    FontSize="Default"
                    FontAttributes="Bold"
                    Margin="10,0,40,0"
@@ -60,25 +61,6 @@
                     </Grid>
                 </switch:CustomSwitch.KnobContent>
             </switch:CustomSwitch>
-        </StackLayout>
-
-        <!-- Чекбокс для сохранения входных данных -->
-        <StackLayout Orientation="Horizontal"
-                     HorizontalOptions="FillAndExpand"
-                     Margin="10">
-            <Label Text="Сохранить входные данные"
-                   TextColor="Black"
-                   FontAttributes="Bold"
-                   FontSize="Default"
-                   Margin="10,0,0,0"
-                   VerticalOptions="Center" />
-            <CheckBox x:Name="SaveDataCheckBox"
-                      HorizontalOptions="End"
-                      IsChecked="false"
-                      BackgroundColor="White"
-                      Color="Black"
-                      VerticalOptions="CenterAndExpand"
-                      Margin="10" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

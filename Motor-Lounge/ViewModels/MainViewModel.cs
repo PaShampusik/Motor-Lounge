@@ -14,6 +14,8 @@ namespace Motor_Lounge.ViewModels
     {
         private readonly IUserService userService;
 
+        public readonly IApplicationService applicationService;
+
         private readonly IInformationService informationService;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -22,10 +24,11 @@ namespace Motor_Lounge.ViewModels
 
         public ObservableCollection<Information> News { get; set; } = new();
 
-        public  MainViewModel(IUserService service, IInformationService _informationService)
+        public  MainViewModel(IUserService service, IInformationService _informationService, IApplicationService applicationService)
         {
             userService = service;
             informationService = _informationService;
+            this.applicationService = applicationService;
         }
 
         [ObservableProperty]
@@ -58,6 +61,7 @@ namespace Motor_Lounge.ViewModels
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             SelectedObject = query["User"] as User;
+            
             Greetings = "Welcome, " + SelectedObject.UserName;
         }
 

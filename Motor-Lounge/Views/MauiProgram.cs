@@ -46,30 +46,33 @@ public static class MauiProgram
         builder.Services.AddSingleton<IUserService, UserService>();
         builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
         builder.Services.AddSingleton<IInformationService, InformationService>();
+        builder.Services.AddSingleton<IApplicationService, ApplicationService>();
 
         //Registering ViewModels
-        builder.Services.AddSingleton<LoginViewModel>();
+        builder.Services.AddTransient<LoginViewModel>();
         builder.Services.AddSingleton<FilterViewModel>();
         builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddSingleton<SettingsViewModel>();
-        builder.Services.AddSingleton<RegistrationViewModel>();
+        builder.Services.AddTransient<RegistrationViewModel>();
         builder.Services.AddSingleton<CarViewModel>();
         builder.Services.AddSingleton<CarDetailsViewModel>();
         builder.Services.AddSingleton<AddViewModel>();
+        builder.Services.AddSingleton<ApplicationsViewModel>();
 
         //Registering Views
         builder.Services.AddTransient<LoginPage>();
         builder.Services.AddTransient<RegistrationPage>();
         builder.Services.AddTransient<MainPage>();
-        builder.Services.AddSingleton<CarPage>();
+        builder.Services.AddTransient<CarPage>();
         builder.Services.AddTransient<CarDetailsPage>();
+        builder.Services.AddTransient<FilterPage>();
+        builder.Services.AddTransient<SettingsPage>();
         builder.Services.AddTransient<AdminCarDetailsPage>();
         builder.Services.AddTransient<AdminAddPage>();
-        builder.Services.AddSingleton<FilterPage>();
-        builder.Services.AddTransient<SettingsPage>();
+        builder.Services.AddTransient<AdminApplicationsPage>();
 
         AddDbContext(builder);
-        SeedData(builder);
+        //SeedData(builder);
 
         return builder.Build();
     }

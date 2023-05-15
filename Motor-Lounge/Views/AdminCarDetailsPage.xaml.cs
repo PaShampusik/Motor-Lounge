@@ -27,4 +27,9 @@ public partial class AdminCarDetailsPage : ContentPage
         carViewModel.GetCars();
         await Shell.Current.GoToAsync("..");
     }
+
+    public async void ViewApplications(object sender, EventArgs args)
+    {
+        await Shell.Current.GoToAsync($"AdminApplicationsPage");
+    }
 }

@@ -7,83 +7,83 @@
              xmlns:page="clr-namespace:Motor_Lounge.Views"
              x:Class="Motor_Lounge.Views.FilterPage"
              Title="FilterPage"
-             BackgroundColor="White"
-             Shell.BackgroundColor="{StaticResource Gray100}"
-             Shell.TitleColor="Black">
+             BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
+             Shell.BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+             Shell.TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}">
     <Grid RowDefinitions="*">
         <ScrollView Grid.Row="0">
             <StackLayout Spacing="10"
                          Padding="10">
                 <Label Text="Brand"
                        FontSize="Large"
-                       TextColor="Black" />
+                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Picker ItemsSource="{Binding CarBrands}"
-                        BackgroundColor="{StaticResource Gray100}"
-                        TextColor="Black"
-                        TitleColor="Black"
+                        BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                        TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                        TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                         SelectedItem="{Binding SelectedCarBrand, Mode=TwoWay}" />
                 <Label Text="Year"
                        FontSize="Large"
-                       TextColor="Black" />
+                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <StackLayout Orientation="Horizontal">
                     <Label Text="From"
-                           TextColor="Black"
+                           TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                            FontSize="Medium"></Label>
                     <Picker ItemsSource="{Binding Years}"
                             SelectedItem="{Binding SelectedStartYear}"
-                            BackgroundColor="{StaticResource Gray100}"
-                            TextColor="Black"
-                            TitleColor="Black"
+                            BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                            TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                            TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                             WidthRequest="100" />
                     <Label Text="To"
-                           TextColor="Black"
+                           TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                            FontSize="Medium"></Label>
                     <Picker ItemsSource="{Binding Years}"
                             SelectedItem="{Binding SelectedEndYear}"
-                            BackgroundColor="{StaticResource Gray100}"
-                            TextColor="Black"
-                            TitleColor="Black"
+                            BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                            TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                            TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                             WidthRequest="100" />
                 </StackLayout>
                 <Label Text="Price"
                        FontSize="Large"
-                       TextColor="Black" />
+                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <StackLayout Orientation="Horizontal">
                     <Label Text="From"
-                           TextColor="Black"
+                           TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                            FontSize="Medium"></Label>
                     <Picker ItemsSource="{Binding Prices}"
                             SelectedItem="{Binding SelectedStartPrice}"
-                            BackgroundColor="{StaticResource Gray100}"
-                            TextColor="Black"
-                            TitleColor="Black"
+                            BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                            TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                            TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                             WidthRequest="100" />
                     <Label Text="To"
-                           TextColor="Black"
+                           TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                            FontSize="Medium"></Label>
                     <Picker ItemsSource="{Binding Prices}"
                             SelectedItem="{Binding SelectedEndPrice}"
-                            BackgroundColor="{StaticResource Gray100}"
-                            TextColor="Black"
-                            TitleColor="Black"
+                            BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                            TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                            TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                             WidthRequest="100" />
                 </StackLayout>
                 <Label Text="Gearbox Type"
-                       TextColor="Black"
+                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                        FontSize="Large" />
                 <StackLayout Orientation="Horizontal">
                     <VerticalStackLayout Margin="15,5,15,5">
                         <Label Text="Any"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontSize="Micro"></Label>
                         <RadioButton GroupName="Transmission"
                                      HorizontalOptions="Center"
-                                     BorderColor= "Black"
+                                     BorderColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                      IsChecked="{Binding IsAnyTransmission}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Margin="15,5,15,5">
                         <Label Text="Automatic"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontSize="Micro"></Label>
                         <RadioButton GroupName="Transmission"
                                      HorizontalOptions="Center"
@@ -91,7 +91,7 @@
                     </VerticalStackLayout>
                     <VerticalStackLayout Margin="15,5,15,5">
                         <Label Text="Manual"
-                               TextColor="Black"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontSize="Micro"></Label>
                         <RadioButton GroupName="Transmission"
                                      HorizontalOptions="Center"
@@ -100,61 +100,62 @@
                 </StackLayout>
                 <Label Text="Car Body Type"
                        FontSize="Large"
-                       TextColor="Black" />
+                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Picker ItemsSource="{Binding CarBodyTypes}"
                         SelectedItem="{Binding SelectedCarBodyType, Mode=TwoWay}"
-                        BackgroundColor="{StaticResource Gray100}"
-                        TextColor="Black"
-                        TitleColor="Black" />
+                        BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                        TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                        TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Label Text="Car Drive Type"
                        FontSize="Large"
-                       TextColor="Black" />
+                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Picker ItemsSource="{Binding CarDriveTypes}"
                         SelectedItem="{Binding SelectedCarDriveType, Mode=TwoWay}"
-                        BackgroundColor="{StaticResource Gray100}"
-                        TextColor="Black"
-                        TitleColor="Black" />
+                        BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                        TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                        TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Label Text="Milleage"
                        FontSize="Large"
-                       TextColor="Black" />
+                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <StackLayout Orientation="Horizontal">
                     <Label Text="From"
-                           TextColor="Black"
+                           TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                            FontSize="Medium"></Label>
                     <Picker ItemsSource="{Binding Milleages}"
                             SelectedItem="{Binding SelectedStartMilleage}"
-                            BackgroundColor="{StaticResource Gray100}"
-                            TextColor="Black"
-                            TitleColor="Black"
+                            BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                            TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                            TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                             WidthRequest="100" />
                     <Label Text="To"
-                           TextColor="Black"
+                           TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                            FontSize="Medium"></Label>
                     <Picker ItemsSource="{Binding Milleages}"
                             SelectedItem="{Binding SelectedEndMilleage}"
-                            BackgroundColor="{StaticResource Gray100}"
-                            TextColor="Black"
-                            TitleColor="Black"
+                            BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                            TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                            TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                             WidthRequest="100" />
                 </StackLayout>
                 <Label Text="Car Color"
                        FontSize="Large"
-                       TextColor="Black" />
+                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Picker ItemsSource="{Binding CarColors}"
                         SelectedItem="{Binding SelectedCarColor, Mode=TwoWay}"
-                        BackgroundColor="{StaticResource Gray100}"
-                        TextColor="Black"
-                        TitleColor="Black" />
+                        BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
+                        TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                        TitleColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
             </StackLayout>
         </ScrollView>
         <Button Grid.Row="0"
                 Text="Apply"
+                TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                 HorizontalOptions="Center"
                 VerticalOptions="End"
                 Margin="0,0,0,5"
                 Opacity="0.8"
                 FontSize="Medium"
                 Clicked="OnButtonClicked"
-                BackgroundColor="LightGreen" />
+                BackgroundColor="{AppThemeBinding Light= {StaticResource Secondary}, Dark= {StaticResource Primary}}" />
     </Grid>
 </ContentPage>

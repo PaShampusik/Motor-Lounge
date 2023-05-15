@@ -3,6 +3,7 @@ using Motor_Lounge.Entities.Converters;
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Entities.Helpers;
 using Motor_Lounge.Entities.Users;
+using Application = Motor_Lounge.Entities.Users.Application;
 
 namespace Motor_Lounge.Data
 {
@@ -12,7 +13,9 @@ namespace Motor_Lounge.Data
 
         public DbSet<User> Users => Set<User>();
 
-        public DbSet<Information> news => Set<Information>();
+        public DbSet<Information> News => Set<Information>();
+
+        public DbSet<Application> Applications => Set<Application>();
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
@@ -22,18 +25,6 @@ namespace Motor_Lounge.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*modelBuilder.Entity<Car>().Property(x => x.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Car>().Property(x => x.Photos).IsRequired();
-            modelBuilder.Entity<Car>().Property(x => x.Price).IsRequired();
-            modelBuilder.Entity<Car>().Property(x => x.Appearance).IsRequired();
-            modelBuilder.Entity<Car>().Property(x => x.Characteristics).IsRequired();
-            modelBuilder.Entity<Car>().Property(x => x.Information).IsRequired();
-
-            modelBuilder.Entity<User>().Property(x => x.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<User>().Property(x => x.UserName).IsRequired();
-            modelBuilder.Entity<User>().Property(x => x.Email).IsRequired();
-            modelBuilder.Entity<User>().Property(x => x.HashedPassword).IsRequired();
-            modelBuilder.Entity<User>().Property(x => x.Salt).IsRequired();*/
 
             modelBuilder.Entity<Car>()
         .Property(c => c.Price)
@@ -66,6 +57,8 @@ namespace Motor_Lounge.Data
                 .Property(c => c.Specification)
                 .HasConversion(new SpecificationConverter());
 
+            modelBuilder.Entity<Application>().Property(x => x.CarId).IsRequired();
+            modelBuilder.Entity<Application>().Property(x => x.UserEmail).IsRequired();
 
             //for offers on main page
             modelBuilder.Entity<Information>().Property(x => x.Info).IsRequired();

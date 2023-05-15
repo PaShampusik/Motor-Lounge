@@ -5,19 +5,21 @@
        xmlns:local="clr-namespace:Motor_Lounge.Views"
        Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent Title="Login"
+    <ShellContent x:Name="Login"
+        Title="Login"
                   ContentTemplate="{DataTemplate local:LoginPage}"
-                  Route="LoginPage" />
+                  Route="LoginPage"
+                  Shell.TabBarIsVisible="false" />
 
     <ShellContent Title="Details"
                   ContentTemplate="{DataTemplate local:CarDetailsPage}"
                   Route="DetailsPage" />
 
-    <ShellContent Title="Details"
+    <ShellContent Title="AdminDetails"
                   ContentTemplate="{DataTemplate local:AdminCarDetailsPage}"
                   Route="AdminDetailsPage" />
 
-    <ShellContent Title="Details"
+    <ShellContent Title="AdminAdd"
                   ContentTemplate="{DataTemplate local:AdminAddPage}"
                   Route="AdminAddPage" />
 
@@ -25,17 +27,21 @@
                   ContentTemplate="{DataTemplate local:FilterPage}"
                   Route="FilterPage" />
 
+    
     <TabBar x:Name="TabBar"
             IsVisible="True"
             Route="Home">
-        <Tab Title="Main" Icon="home.svg">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" 
-                          Title="Main"/>
+        <Tab Title="Main"
+             Icon="home.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"
+                          Title="Main" />
         </Tab>
-        <Tab Title="CarPage" Icon="car.svg">
+        <Tab Title="CarPage"
+             Icon="car.svg">
             <ShellContent ContentTemplate="{DataTemplate local:CarPage}" />
         </Tab>
-        <Tab Title="Settings" Icon="settings.svg">
+        <Tab Title="Settings"
+             Icon="settings.svg">
             <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
         </Tab>
     </TabBar>
