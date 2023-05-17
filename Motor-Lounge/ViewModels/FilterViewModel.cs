@@ -2,12 +2,13 @@
 using CommunityToolkit.Mvvm.Input;
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Services;
+using Motor_Lounge.ViewModels.Base;
 using System.Collections.ObjectModel;
 
 namespace Motor_Lounge.ViewModels
 {
 
-    public partial class FilterViewModel : ObservableObject
+    public partial class FilterViewModel : BaseViewModel
     {
         private ICarService carService;
         public ObservableCollection<Car> FilteredCars { get; set; } = new();

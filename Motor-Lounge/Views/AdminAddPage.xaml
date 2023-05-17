@@ -9,7 +9,8 @@
              Title="AdminAddPage">
     <Grid RowDefinitions="*">
         <ScrollView Grid.Row="0">
-            <StackLayout>
+            <StackLayout
+                Orientation="Vertical">
                 <ScrollView Orientation="Horizontal">
                     <StackLayout Orientation="Horizontal"
                                  VerticalOptions="Center"
@@ -62,98 +63,167 @@
                         </Frame>
                     </StackLayout>
                 </ScrollView>
+               
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}"
+                       Margin="15,10,15,10"
+                       
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
+                    <VerticalStackLayout>
                 <Label Text="Car Specification"
+                       FontSize="Medium"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,10"
                        TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Entry Text="{Binding Specification.Year, Mode=TwoWay}"
                        Placeholder="Year"
+                       Margin="5,5,5,5"
                        TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Specification.Brand, Mode=TwoWay}"
-                       Placeholder="Brand"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Brand"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Specification.Model, Mode=TwoWay}"
-                       Placeholder="Model"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
-
-                <Label Text="Car Characteristics"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
+                               Placeholder="Model"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}"
+                       Margin="15,10,15,10"
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
+                    <VerticalStackLayout>
+                        <Label Text="Car Characteristics"
+                               FontSize="Medium"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,10"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Entry Text="{Binding Characteristics.EngineType, Mode=TwoWay}"
-                       Placeholder="Engine Type"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Engine Type"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Characteristics.EngineVolume, Mode=TwoWay}"
-                       Placeholder="Engine Volume"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Engine Volume"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Characteristics.Milleage, Mode=TwoWay}"
-                       Placeholder="Milleage"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Milleage"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Characteristics.GearboxType, Mode=TwoWay}"
-                       Placeholder="Gearbox Type"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Gearbox Type"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Characteristics.DriveType, Mode=TwoWay}"
-                       Placeholder="Drive Type"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Drive Type"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Characteristics.BodyType, Mode=TwoWay}"
                        Placeholder="Body Type"
                        TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Characteristics.NumOfDoors, Mode=TwoWay}"
-                       Placeholder="Number of Doors"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
-
-                <Label Text="Car Equipment"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
+                               Placeholder="Number of Doors"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}"
+                       Margin="15,10,15,10"
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
+                    <VerticalStackLayout>
+                        <Label Text="Car Equipment"
+                               FontSize="Medium"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,10"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Entry Text="{Binding Equipment.NameOfFeatures, Mode=TwoWay}"
-                       Placeholder="Name of Features"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Name of Features"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Equipment.Features}"
-                       Placeholder="Features"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
-
-                <Label Text="Car Price"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
+                               Placeholder="Features"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}"
+                       Margin="15,10,15,10"
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
+                    <VerticalStackLayout>
+                        <Label Text="Car Price"
+                               FontSize="Medium"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,10"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Entry Text="{Binding Price.IndividualPrice, Mode=TwoWay}"
-                       Placeholder="Individual Price"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Individual Price"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Price.CorporationPrice, Mode=TwoWay}"
-                       Placeholder="Corporation Price"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
-
-                <Label Text="Car Appearance"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
+                               Placeholder="Corporation Price"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}"
+                       Margin="15,10,15,10"
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
+                    <VerticalStackLayout>
+                        <Label Text="Car Appearance"
+                               FontSize="Medium"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,10"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}" />
                 <Entry Text="{Binding Appearance.Color, Mode=TwoWay}"
-                       Placeholder="Color"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Color"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Appearance.InteriorColor, Mode=TwoWay}"
-                       Placeholder="Interior Color"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Interior Color"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Appearance.CarColor, Mode=TwoWay}"
-                       Placeholder="Car Color"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                               Placeholder="Car Color"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
                 <Entry Text="{Binding Appearance.InteriorMaterial, Mode=TwoWay}"
-                       Placeholder="Interior Material"
-                       TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                       BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
-
-                <Label Text="Car Information" />
+                               Placeholder="Interior Material"
+                               Margin="5,5,5,5"
+                               TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}"
+                       Margin="15,10,15,10"
+                       BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
+                    <VerticalStackLayout>
+                        <Label Text="Car Information"
+                               FontSize="Medium"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,10" />
                 <Editor Text="{Binding Information.Info, Mode=TwoWay}"
-                        Placeholder="Information"
-                        TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                        BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}" />
+                                Placeholder="Information"
+                                Margin="5,0,5,5"
+                                TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                                BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray600}}" />
+                    </VerticalStackLayout>
+                </Frame>
 
             </StackLayout>
         </ScrollView>

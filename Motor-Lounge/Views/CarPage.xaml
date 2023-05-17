@@ -28,7 +28,7 @@
                     <DataTemplate x:DataType="local:Car">
                         <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray500}}"
                                BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
-                               Margin="5,5,5,5">
+                               Margin="15,10,15,10">
                             <Frame.GestureRecognizers>
 
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:CarViewModel}}, Path=GoToCarDetailsPageCommand}"
@@ -82,7 +82,7 @@
 
                                        
                                         <Frame HeightRequest="200"
-                                               WidthRequest="350"
+                                               WidthRequest="450"
                                                CornerRadius="50"
                                                IsClippedToBounds="True"
                                                BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray300}}"
@@ -91,26 +91,12 @@
                                             <skia:SKLottieView Source="diamond.json"
                                                                RepeatCount="-1"
                                                                HeightRequest="140"
-                                                               WidthRequest="250"
+                                                               WidthRequest="350"
                                                                HorizontalOptions="Center"
                                                                VerticalOptions="Center" />
 
                                         </Frame>
-                                        <Frame HeightRequest="200"
-                                               WidthRequest="350"
-                                               CornerRadius="50"
-                                               IsClippedToBounds="True"
-                                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray300}}"
-                                               BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
-                                               Margin="10,0,10,0">
-                                            <skia:SKLottieView Source="diamond.json"
-                                                               RepeatCount="-1"
-                                                               HeightRequest="140"
-                                                               WidthRequest="250"
-                                                               HorizontalOptions="Center"
-                                                               VerticalOptions="Center" />
-
-                                        </Frame>
+                                        
                                     </StackLayout>
                                 </ScrollView>
 
@@ -152,7 +138,7 @@
                      Aspect="AspectFit"
                      BackgroundColor="{AppThemeBinding Light= {StaticResource Secondary}, Dark= {StaticResource Primary}}"
                      Command="{Binding GoToFilterPageCommand}"
-                     Opacity="0.7"
+                     Opacity="1"
                      WidthRequest="70"
                      HorizontalOptions="End"
                      VerticalOptions="End">

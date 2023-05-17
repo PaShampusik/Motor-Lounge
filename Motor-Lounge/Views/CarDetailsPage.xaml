@@ -43,36 +43,7 @@
                                                VerticalOptions="Center" />
 
                         </Frame>
-                        <Frame HeightRequest="400"
-                               WidthRequest="650"
-                               CornerRadius="50"
-                               IsClippedToBounds="True"
-                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}"
-                               BorderColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
-                               Margin="10,0,50,20">
-                            <skia:SKLottieView Source="diamond.json"
-                                               RepeatCount="-1"
-                                               HeightRequest="140"
-                                               WidthRequest="250"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center" />
-
-                        </Frame>
-                        <Frame HeightRequest="400"
-                               WidthRequest="650"
-                               CornerRadius="50"
-                               IsClippedToBounds="True"
-                               BackgroundColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray500}}"
-                               BorderColor="{AppThemeBinding Light= {StaticResource Gray100}, Dark= {StaticResource Gray900}}"
-                               Margin="10,0,50,20">
-                            <skia:SKLottieView Source="diamond.json"
-                                               RepeatCount="-1"
-                                               HeightRequest="140"
-                                               WidthRequest="250"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center" />
-
-                        </Frame>
+                        
                         <Frame HeightRequest="400"
                                WidthRequest="650"
                                CornerRadius="50"
@@ -92,12 +63,12 @@
                 </ScrollView>
 
                 <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
-                       Margin="5,5,5,5"
+                       Margin="15,10,15,10"
                        BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}">
                     <VerticalStackLayout>
                         <Label Text="Total information"
                                TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                               Margin="0,7,0,0"
+                               Margin="0,7,0,10"
                                FontAttributes="Bold"
                                FontSize="Medium"
                                VerticalOptions="Center"
@@ -234,14 +205,14 @@
                 </Frame>
 
                 <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
-                       Margin="5,5,5,5"
+                       Margin="15,10,15,10"
                        BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
                     <VerticalStackLayout>
                         <Label Text="Appearance"
                                TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                FontSize="Medium"
-                               Margin="0,7,0,0"
+                               Margin="0,7,0,10"
                                VerticalOptions="Center"
                                HorizontalOptions="Center" />
                         <Grid ColumnDefinitions="*, *"
@@ -312,14 +283,14 @@
                 </Frame>
 
                 <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
-                       Margin="5,5,5,5"
+                       Margin="15,10,15,10"
                        BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
                     <VerticalStackLayout>
                         <Label Text="Specification"
                                TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                FontSize="Medium"
-                               Margin="0,7,0,0"
+                               Margin="0,7,0,10"
                                VerticalOptions="Center"
                                HorizontalOptions="Center" />
                         <Grid ColumnDefinitions="*, *"
@@ -390,14 +361,14 @@
                 </Frame>
 
                 <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
-                       Margin="5,5,5,5"
+                       Margin="15,10,15,10"
                        BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
                     <VerticalStackLayout>
                         <Label Text="Equipment"
                                TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                FontSize="Medium"
-                               Margin="0,7,0,0"
+                               Margin="0,7,0,10"
                                VerticalOptions="Center"
                                HorizontalOptions="Center" />
 
@@ -415,14 +386,14 @@
                 </Frame>
 
                 <Frame BackgroundColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}"
-                       Margin="5,5,5,5"
+                       Margin="15,10,15,10"
                        BorderColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray600}}">
                     <VerticalStackLayout>
                         <Label Text="Other Information"
                                TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                                FontAttributes="Bold"
                                FontSize="Medium"
-                               Margin="0,7,0,0"
+                               Margin="0,7,0,10"
                                VerticalOptions="Center"
                                HorizontalOptions="Center" />
 

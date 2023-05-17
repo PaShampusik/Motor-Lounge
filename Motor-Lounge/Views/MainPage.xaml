@@ -34,10 +34,11 @@
                 </Image>
             </Frame>
 
-            <Label Text="No matter how you pedal, Car is better!"
+            <Label 
+                Text="No matter how you pedal, Car is better!"
                    TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource Primary}}"
                    FontSize="15"
-                   Margin="0,-30,0,0"
+                   Margin="0,-15,0,0"
                    HorizontalOptions="Center"
                    VerticalOptions="Center" />
 
@@ -79,22 +80,24 @@
             </StackLayout>
         </ScrollView>
 
-        <StackLayout Orientation="Horizontal">
-            <Label TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
-                Text  ="{Binding SelectedObject.UserName, StringFormat= 'User: {0}'}"
-                FontSize="Medium"
+        <Grid ColumnDefinitions="*, *">
+            <Label Grid.Column="0"
                    HorizontalOptions="Start"
+                   TextColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
+                   Text="{Binding SelectedObject.UserName, StringFormat= 'User: {0}'}"
+                   FontSize="Medium"
                    VerticalOptions="End"
-                   Margin="5, 0, 20, 12"></Label>
-        <Button Text="Account Exit"
-                Clicked="AccountExit"
-                HorizontalOptions="End"
-                VerticalOptions="End"
-                Margin="0,0,5,5"
+                   Margin="30, 0, 20, 12"></Label>
+            <Button Text="Account Exit"
+                    Grid.Column="1"
+                    Clicked="AccountExit"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Margin="5,10,30,10"
                     BackgroundColor="{AppThemeBinding Light= {StaticResource Secondary}, Dark= {StaticResource Primary}}"
                     TextColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Gray900}}"
-                FontSize="Small"></Button>
-        </StackLayout>
+                    FontSize="Small"></Button>
+        </Grid>
     </StackLayout>
 
     <!-- Body -->

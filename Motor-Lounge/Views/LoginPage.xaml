@@ -33,12 +33,11 @@
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
                        FontSize="Subtitle"
-                       Margin="0,90,0,0"
                        Padding="0" />
                 <Frame BackgroundColor="Transparent"
+                       Margin="0,40,0,0"
                        BorderColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                        Padding="5"
-                       Margin="20,15,50,10"
                        HorizontalOptions="FillAndExpand"
                        CornerRadius="30">
                     <StackLayout Orientation="Horizontal">
@@ -53,9 +52,9 @@
                     </StackLayout>
                 </Frame>
                 <Frame BackgroundColor="Transparent"
+                       Margin="0,20,0,0"
                        BorderColor="{AppThemeBinding Light= {StaticResource Black}, Dark= {StaticResource White}}"
                        Padding="5"
-                       Margin="20,15,50,10"
                        HorizontalOptions="FillAndExpand"
                        CornerRadius="30">
                     <StackLayout Orientation="Horizontal">
@@ -72,12 +71,11 @@
                 </Frame>
 
                 <StackLayout Orientation="Horizontal"
-                             Margin="0, 10, 0,0"
+                             Margin="0, 20, 0,0"
                              Padding="0"
                              HorizontalOptions="CenterAndExpand">
 
                     <Button Text="Sign in"
-                            Margin="20,15,50,10"
                             BackgroundColor="{AppThemeBinding Light= {StaticResource Secondary}, Dark= {StaticResource Primary}}"
                             TextColor="{AppThemeBinding Light= {StaticResource White}, Dark= {StaticResource Black}}"
                             FontAttributes="Bold"

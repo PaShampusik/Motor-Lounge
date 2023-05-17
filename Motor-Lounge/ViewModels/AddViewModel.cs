@@ -2,10 +2,11 @@
 using Motor_Lounge.Entities.Cars;
 using Motor_Lounge.Entities.Helpers;
 using Motor_Lounge.Services;
+using Motor_Lounge.ViewModels.Base;
 
 namespace Motor_Lounge.ViewModels
 {
-    public partial class AddViewModel : ObservableObject
+    public partial class AddViewModel : BaseViewModel
     {
         [ObservableProperty]
         public Specification specification = new(2020, "BMW", "M5");

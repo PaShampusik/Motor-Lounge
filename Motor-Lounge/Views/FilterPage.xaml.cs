@@ -15,7 +15,7 @@ public partial class FilterPage : ContentPage
 		InitializeComponent();
 		viewModel = _viewModel;
 		carViewModel = _carViewModel;
-		viewModel.Cars = carViewModel.Cars.ToList<Car>();
+		viewModel.Cars = carViewModel.Cars.ToList();
 		viewModel.Refresh();
 		BindingContext = viewModel;
 	}
