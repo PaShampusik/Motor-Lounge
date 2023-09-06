@@ -72,7 +72,7 @@ public static class MauiProgram
         builder.Services.AddTransient<AdminApplicationsPage>();
 
         AddDbContext(builder);
-        //SeedData(builder);
+        SeedData(builder);
 
         return builder.Build();
     }
